@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from html.themeflowx.com/pretty/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Aug 2026 17:20:11 GMT -->
+<head>
+    <!-- EARLY THEME APPLY (prevents flash of wrong theme) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('pretty-theme');
+                var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) document.documentElement.classList.add('dark-mode');
+            } catch (e) {}
+        })();
+    </script>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creative beautiful Portfolio Template">
+    <meta name="keywords" content="minimal, creative, fresh, portfolio, personal, developer, beautiful,personal resume, onepage, clean, modern">
+    <meta name="author" content="Md Shamsuzzaman">
+    <!-- PAGE TITLE -->
+    <title>Pretty - Beautiful Creative Portfolio Template</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon"/>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- MAIN STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- RESPONSIVE CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- AI CHAT BUTTON CSS -->
+    <link rel="stylesheet" href="assets/css/ai-fab.css">
+    <!-- SHARED SECTIONS CSS -->
+    <link rel="stylesheet" href="assets/css/sections.css">
+    <!-- FIXED SIDEBAR CSS -->
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <!-- FLOATING GLASS NAV CSS -->
+    <link rel="stylesheet" href="assets/css/floating-nav.css">
+    <!-- DARK THEME CSS -->
+    <link rel="stylesheet" href="assets/css/theme-dark.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="ext-page-body">
+    <!-- ====================== Fixed Profile Sidebar ====================== -->
+    <aside class="site-sidebar">
+        <div class="sidebar-avatar">
+            <img src="assets/images/me.jpg" alt="Juliana Doe">
+        </div>
+        <h2 class="sidebar-name">Juliana Doe</h2>
+        <p class="sidebar-role">WordPress Designer &amp; Developer</p>
+        <span class="sidebar-location"><i class="fa fa-map-marker"></i> Australia</span>
+        <span class="sidebar-current-page">Viewing <strong>About</strong></span>
+        <ul class="sidebar-social">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <a href="ai-chat.html" class="sidebar-ai-btn"><i class="fa fa-comments"></i> Ask AI</a>
+    </aside>
+
+    <!-- ====================== Floating Glass Nav (desktop) ====================== -->
+    <nav class="floating-glass-nav" aria-label="Primary">
+        <ul class="glass-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <span class="glass-nav-divider"></span>
+        <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fa fa-moon-o"></i>
+        </button>
+    </nav>
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <div class="status">
+            <div class="status-mes"></div>
+        </div>
+    </div>
+    <!-- / END PRELOADER -->
+
+    <!-- START HOMEPAGE DESIGN AREA -->
+    <header id="home" class="site-header">
+        <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <!-- START LOGO DESIGN AREA -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                        </div>
+                        <!-- END LOGO DESIGN AREA -->
+                    </div>
+                    <div class="col-sm-9">
+                        <!-- START MENU DESIGN AREA -->
+                        <div class="mainmenu">
+                            <div class="navbar navbar-nobg">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="nav-toggle hidden-xs">
+                                    <button class="toggle-btn">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a class="smoth-scroll" href="index.html">Home <div class="ripple-wrapper"></div></a>
+                                        </li>
+                                        <li class="active"><a href="about.html">About</a>
+                                        </li>
+                                        <li><a href="resume.html">Resume</a>
+                                        </li>
+                                        <li><a href="projects.html">Projects</a>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END MENU DESIGN AREA -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- START PAGE TITLE DESIGN AREA -->
+    <div class="welcome-image-areaa">
+        <div class="container">
+            <div class="page-title-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>about me</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END PAGE TITLE DESIGN AREA -->
+
+    <!-- START ABOUT HERO / INTRO AREA -->
+    <div class="about-hero about-block about-reveal">
+        <div class="container">
+            <div class="about-hero-inner">
+                <div class="about-hero-media">
+                    <img src="assets/images/me.jpg" alt="Juliana Doe">
+                    <div>
+                        <span class="about-availability"><span class="dot"></span> Available for freelance work</span>
+                    </div>
+                </div>
+                <div class="about-hero-content">
+                    <h1>Hi, I'm <strong>Juliana Doe</strong></h1>
+                    <p class="role">WordPress Designer &amp; Developer, based in Australia</p>
+                    <p>I'm a designer and developer who turns ideas into clean, dependable WordPress experiences. My work blends thoughtful visual design with solid front-end code, built to help small teams and creative brands launch with confidence.</p>
+                    <p>Over the years I've partnered with agencies, startups and independent creatives — always aiming for the same thing: interfaces that feel simple, load fast, and hold up long after launch.</p>
+                    <ul class="about-social-row">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END ABOUT HERO / INTRO AREA -->
+
+    <!-- START ABOUT STATS AREA -->
+    <div class="about-stats about-reveal">
+        <div class="container">
+            <div class="about-stats-row">
+                <div class="about-stat">
+                    <div class="num" data-count="8" data-suffix="+">0</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="about-stat">
+                    <div class="num" data-count="120" data-suffix="+">0</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="about-stat">
+                    <div class="num" data-count="60" data-suffix="+">0</div>
+                    <div class="label">Happy Clients</div>
+                </div>
+                <div class="about-stat">
+                    <div class="num" data-count="15" data-suffix="+">0</div>
+                    <div class="label">Awards &amp; Recognitions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END ABOUT STATS AREA -->
+
+    <!-- START WHAT I DO AREA -->
+    <div class="about-whatido about-block about-reveal">
+        <div class="container">
+            <div class="about-section-title text-center">
+                <span>Services &amp; What I Do</span>
+                <h2>Where I can help.</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="whatido-card">
+                        <i class="fa fa-paint-brush"></i>
+                        <h3>Branding</h3>
+                        <p>Building clean, memorable visual identities for brands that want to stand out.</p>
+                        <a href="contact.html">Get a quote</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="whatido-card">
+                        <i class="fa fa-wordpress"></i>
+                        <h3>Web Design &amp; Development</h3>
+                        <p>Designing and building fast, responsive WordPress sites from the ground up.</p>
+                        <a href="contact.html">Get a quote</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="whatido-card">
+                        <i class="fa fa-bullhorn"></i>
+                        <h3>Marketing</h3>
+                        <p>Helping brands grow their reach with focused, results-driven campaigns.</p>
+                        <a href="contact.html">Get a quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END WHAT I DO AREA -->
+
+    <!-- START RESUME CTA AREA -->
+    <div class="about-resume-cta about-reveal">
+        <div class="container">
+            <p>Want the full breakdown of my experience, education and skills?</p>
+            <a href="resume.html">View My Resume <i class="fa fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <!-- / END RESUME CTA AREA -->
+
+    <!-- START MARQUEE AREA -->
+    <div class="about-marquee">
+        <div class="marquee-track">
+            <span class="solid">WordPress Design</span>
+            <span>Web Development</span>
+            <span>Branding</span>
+            <span>SEO</span>
+            <span>Marketing</span>
+            <span>UI/UX</span>
+            <span class="solid">WordPress Design</span>
+            <span>Web Development</span>
+            <span>Branding</span>
+            <span>SEO</span>
+            <span>Marketing</span>
+            <span>UI/UX</span>
+        </div>
+    </div>
+    <!-- / END MARQUEE AREA -->
+
+    <!-- START TOOLS AREA -->
+    <div class="about-tools about-block about-reveal">
+        <div class="container">
+            <div class="about-section-title text-center">
+                <span>Toolbox</span>
+                <h2>Tools &amp; platforms I use.</h2>
+            </div>
+            <div class="tools-row">
+                <div class="tool"><img src="assets/images/tools/wordpress.png" alt="WordPress"></div>
+                <div class="tool"><img src="assets/images/tools/elementor.png" alt="Elementor"></div>
+                <div class="tool"><img src="assets/images/tools/figma.png" alt="Figma"></div>
+                <div class="tool"><img src="assets/images/tools/photoshop.png" alt="Photoshop"></div>
+                <div class="tool"><img src="assets/images/tools/sketch.png" alt="Sketch"></div>
+                <div class="tool"><img src="assets/images/tools/shopify.png" alt="Shopify"></div>
+            </div>
+        </div>
+    </div>
+    <!-- / END TOOLS AREA -->
+
+    <!-- START TESTIMONIALS AREA -->
+    <div class="about-testimonials about-block about-reveal">
+        <div class="container">
+            <div class="about-section-title text-center">
+                <span>Testimonials</span>
+                <h2>What clients say.</h2>
+            </div>
+            <div class="testimonial-viewport">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left"></i>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>Juliana rebuilt our site from the ground up and it finally feels like us. Clear communication the whole way through, and the WordPress build has been rock solid since launch.</p>
+                            <h5>Sarah K.</h5>
+                            <span>Small Business Owner</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left"></i>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>We needed a fast turnaround on our launch site and Juliana delivered — clean design, easy to update ourselves after handoff, and genuinely good SEO fundamentals baked in.</p>
+                            <h5>James T.</h5>
+                            <span>Startup Founder</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left"></i>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>Great eye for branding and a developer's attention to detail — a rare combination. Our campaign pages have never converted better.</p>
+                            <h5>Priya M.</h5>
+                            <span>Marketing Lead</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav" id="testimonialNav"></div>
+            </div>
+        </div>
+    </div>
+    <!-- / END TESTIMONIALS AREA -->
+
+
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="social-link-area">
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Linkedin</a></li>
+                        </ul>
+                    </div>
+                    <p>&copy;Copyright 2017 Pretty | All RightReserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+
+    <!-- ====================== AI Chat Floating Button ====================== -->
+    <a href="ai-chat.html" class="ai-fab">
+        <span class="ai-fab-icon"><i class="fa fa-comments"></i></span>
+        <span class="ai-fab-label">Ask AI</span>
+    </a>
+
+    <!-- LATEST JQUERY -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- WOW JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- SCRIPT JS -->
+    <script src="assets/js/scripts.js"></script>
+    <!-- SHARED SECTIONS JS -->
+    <script src="assets/js/sections.js"></script>
+    <!-- THEME TOGGLE JS -->
+    <script src="assets/js/theme.js"></script>
+</body>
+
+
+<!-- Mirrored from html.themeflowx.com/pretty/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Aug 2026 17:20:11 GMT -->
+</html>
