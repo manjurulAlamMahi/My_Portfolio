@@ -201,6 +201,21 @@ fieldset {
     border: 3px solid #f8f8f8;
 }
 
+.typed-cursor {
+    font-weight: 300;
+    color: #333;
+    animation: typed-cursor-blink 0.8s steps(1) infinite;
+}
+
+@keyframes typed-cursor-blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.01%, 100% {
+        opacity: 0;
+    }
+}
+
 .header-top-area {
     position: fixed;
     left: 0;
