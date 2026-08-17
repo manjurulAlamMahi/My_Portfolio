@@ -1,0 +1,167 @@
+/*
+* ----------------------------------------------------------------------------------------
+* PROJECT CARDS — grid item hover overlay (projects.html)
+* Palette/type reuse the site's existing style (#131212, #fff, Segoe UI, sharp corners).
+* ----------------------------------------------------------------------------------------
+*/
+
+.project-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.project-card-media {
+    overflow: hidden;
+}
+
+.project-card-media img {
+    width: 100%;
+    display: block;
+    -webkit-transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+.project-card:hover .project-card-media img,
+.project-card:focus .project-card-media img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.project-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 30px;
+    background: rgba(19, 18, 18, 0.85);
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card-overlay,
+.project-card:focus .project-card-overlay {
+    opacity: 1;
+}
+
+.project-card-overlay > * {
+    opacity: 0;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .project-card-overlay > *,
+.project-card:focus .project-card-overlay > * {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.project-card-category {
+    transition-delay: 0.05s;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.project-card-title {
+    transition-delay: 0.1s;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 10px;
+}
+
+.project-card-desc {
+    transition-delay: 0.15s;
+    color: #cfcfcf;
+    font-size: 13px;
+    line-height: 22px;
+    margin: 0 0 16px;
+    max-width: 90%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-card-tech {
+    transition-delay: 0.2s;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-card-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #eee;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 4px 10px;
+}
+
+.project-card-btn {
+    transition-delay: 0.25s;
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 22px;
+    -webkit-transition: background 0.25s, color 0.25s;
+    transition: background 0.25s, color 0.25s;
+}
+
+.project-card:hover .project-card-btn,
+.project-card:focus .project-card-btn {
+    background: #fff;
+    color: #131212;
+}
+
+/* ---------------- MOBILE / TABLET: no hover, tap goes straight to details ---------------- */
+@media only screen and (max-width: 767px) {
+    .project-card-overlay {
+        top: auto;
+        justify-content: flex-end;
+        padding: 16px 18px;
+        background: -webkit-linear-gradient(bottom, rgba(19, 18, 18, 0.95) 55%, rgba(19, 18, 18, 0) 100%);
+        background: linear-gradient(to top, rgba(19, 18, 18, 0.95) 55%, rgba(19, 18, 18, 0) 100%);
+        opacity: 1;
+    }
+
+    .project-card-overlay > * {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        transition: none;
+    }
+
+    .project-card-desc,
+    .project-card-tech,
+    .project-card-btn {
+        display: none;
+    }
+
+    .project-card-title {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+}

@@ -16,6 +16,14 @@
         padding-left: 280px;
     }
 
+    /* Bootstrap's .container falls back to a fixed width (970/1170px) per
+       breakpoint and doesn't know the sidebar just claimed 280px, so on
+       laptop-width screens (~992-1440px) it overflows past the viewport.
+       Cap it to whatever's actually left. */
+    .container {
+        max-width: calc(100vw - 280px);
+    }
+
     /* the sidebar carries its own Ask AI button, so hide the floating one */
     .ai-fab {
         display: none;

@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="assets/css/ai-fab.css">
     <!-- SHARED SECTIONS CSS -->
     <link rel="stylesheet" href="assets/css/sections.css">
+    <!-- PROJECT CARD HOVER OVERLAY CSS -->
+    <link rel="stylesheet" href="assets/css/project-cards.css">
     <!-- FIXED SIDEBAR CSS -->
     <link rel="stylesheet" href="assets/css/sidebar.css">
     <!-- FLOATING GLASS NAV CSS -->
@@ -164,72 +166,10 @@
     <!-- START WORK DESIGN AREA -->
     <section id="work" class="work">
         <div class="container">
-            <!-- CATEGORY FILTERS -->
-            <div class="project-filters">
-                <button type="button" class="active" data-filter="all">All</button>
-                <button type="button" data-filter="brands">Brands</button>
-                <button type="button" data-filter="design">Design</button>
-                <button type="button" data-filter="development">Development</button>
-                <button type="button" data-filter="logo">Logo</button>
-            </div>
-            <div class="row">
-                <!-- START SINGLE WORK DESIGN AREA -->
-                <div class="col-md-6 col-sm-6 project-grid-item" data-category="brands">
-                    <div class="project-item">
-                        <a href="assets/images/work/1.jpg" class="work-popup">
-                            <img src="assets/images/work/1.jpg" class="img-responsive" alt="">
-                            <div class="project-overlay">
-                                <div class="project-info">
-                                    <h2 class="wow fadeInUp">Brands</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- END SINGLE WORK DESIGN AREA -->
-                <!-- START SINGLE WORK DESIGN AREA -->
-                <div class="col-md-6 col-sm-6 project-grid-item" data-category="design">
-                    <div class="project-item">
-                        <a href="assets/images/work/2.jpg" class="work-popup">
-                            <img src="assets/images/work/2.jpg" class="img-responsive" alt="">
-                            <div class="project-overlay">
-                                <div class="project-info">
-                                    <h2 class="wow fadeInUp">Design</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- END SINGLE WORK DESIGN AREA -->
-                <!-- START SINGLE WORK DESIGN AREA -->
-                <div class="col-md-6 col-sm-6 project-grid-item" data-category="development">
-                    <div class="project-item">
-                        <a href="assets/images/work/3.jpg" class="work-popup">
-                            <img src="assets/images/work/3.jpg" class="img-responsive" alt="">
-                            <div class="project-overlay">
-                                <div class="project-info">
-                                    <h2 class="wow fadeInUp">development</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- END SINGLE WORK DESIGN AREA -->
-                <!-- START SINGLE WORK DESIGN AREA -->
-                <div class="col-md-6 col-sm-6 project-grid-item" data-category="logo">
-                    <div class="project-item">
-                        <a href="assets/images/work/4.jpg" class="work-popup">
-                            <img src="assets/images/work/4.jpg" class="img-responsive" alt="">
-                            <div class="project-overlay">
-                                <div class="project-info">
-                                    <h2 class="wow fadeInUp">logo</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- END SINGLE WORK DESIGN AREA -->
-            </div>
+            <!-- CATEGORY FILTERS (built from assets/js/projects-data.js) -->
+            <div class="project-filters" id="projectFilters"></div>
+            <!-- PROJECT GRID (built from assets/js/projects-data.js) -->
+            <div class="row" id="projectGrid"></div>
         </div>
     </section>
     <!-- / END START WORK DESIGN AREA -->
@@ -280,8 +220,10 @@
     <script src="assets/js/scripts.js"></script>
     <!-- SHARED SECTIONS JS -->
     <script src="assets/js/sections.js"></script>
-    <!-- PROJECTS FILTER JS -->
-    <script src="assets/js/projects.js"></script>
+    <!-- PROJECT DATA (shared with project-details.html) -->
+    <script src="assets/js/projects-data.js"></script>
+    <!-- PROJECTS GRID + FILTER RENDER JS -->
+    <script src="assets/js/projects-render.js"></script>
     <!-- THEME TOGGLE JS -->
     <script src="assets/js/theme.js"></script>
 </body>

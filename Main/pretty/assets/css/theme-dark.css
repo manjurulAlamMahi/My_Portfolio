@@ -163,6 +163,45 @@ html.dark-mode .form-control::placeholder {
     color: #6c6c6c;
 }
 
+/* ---------------- PROJECT CASE STUDY PAGE ---------------- */
+html.dark-mode .case-back-link,
+html.dark-mode .case-not-found h2 {
+    color: #f2f2f2;
+}
+
+html.dark-mode .case-link-btn:hover {
+    color: #f2f2f2;
+}
+
+html.dark-mode .case-tech-row .project-card-tag {
+    color: #e0e0e0;
+    border-color: #2c2c2c;
+}
+
+html.dark-mode .case-section {
+    border-color: #2c2c2c;
+}
+
+html.dark-mode .case-section p {
+    color: #a9a9a9;
+}
+
+html.dark-mode .case-feature-list li {
+    color: #d8d8d8;
+}
+
+html.dark-mode .case-feature-list li::before {
+    color: #f2f2f2;
+}
+
+html.dark-mode .case-page-card img {
+    border-color: #2c2c2c;
+}
+
+html.dark-mode .case-page-card span {
+    color: #e0e0e0;
+}
+
 html.dark-mode .form-control:focus {
     border-color: #f2f2f2;
 }
