@@ -26,9 +26,33 @@ Version      : 1.0
             var preloaderArea = jQuery('.preloader-area');
             preloader.fadeOut();
             preloaderArea.delay(350).fadeOut('slow');
+
+            if (typedNameTarget) {
+                setTimeout(typeNextChar, 300);
+            }
         });
 
 
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  HERO TYPEWRITER GREETING JS
+         * ----------------------------------------------------------------------------------------
+         */
+
+        var typedNameTarget = document.getElementById('typed-name');
+        if (typedNameTarget) {
+            var typedNameText = 'Juliana Doe';
+            var typedNameIndex = 0;
+            var typedNameSpeedMs = 55;
+
+            var typeNextChar = function () {
+                if (typedNameIndex < typedNameText.length) {
+                    typedNameTarget.textContent += typedNameText.charAt(typedNameIndex);
+                    typedNameIndex++;
+                    setTimeout(typeNextChar, typedNameSpeedMs);
+                }
+            };
+        }
 
 
         /*
