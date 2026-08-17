@@ -29,6 +29,28 @@ Version      : 1.0
         });
 
 
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  HERO TYPEWRITER GREETING JS
+         * ----------------------------------------------------------------------------------------
+         */
+
+        var typedNameTarget = document.getElementById('typed-name');
+        if (typedNameTarget) {
+            var typedNameText = 'Juliana Doe';
+            var typedNameIndex = 0;
+            var typedNameSpeedMs = 55;
+
+            var typeNextChar = function () {
+                if (typedNameIndex < typedNameText.length) {
+                    typedNameTarget.textContent += typedNameText.charAt(typedNameIndex);
+                    typedNameIndex++;
+                    setTimeout(typeNextChar, typedNameSpeedMs);
+                }
+            };
+
+            setTimeout(typeNextChar, 300);
+        }
 
 
         /*
