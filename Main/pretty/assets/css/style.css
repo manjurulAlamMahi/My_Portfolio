@@ -202,8 +202,6 @@ fieldset {
 }
 
 .typed-cursor {
-    font-weight: 300;
-    color: #333;
     animation: typed-cursor-blink 0.8s steps(1) infinite;
 }
 

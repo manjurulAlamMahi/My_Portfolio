@@ -26,6 +26,10 @@ Version      : 1.0
             var preloaderArea = jQuery('.preloader-area');
             preloader.fadeOut();
             preloaderArea.delay(350).fadeOut('slow');
+
+            if (typedNameTarget) {
+                setTimeout(typeNextChar, 300);
+            }
         });
 
 
@@ -48,8 +52,6 @@ Version      : 1.0
                     setTimeout(typeNextChar, typedNameSpeedMs);
                 }
             };
-
-            setTimeout(typeNextChar, 300);
         }
 
 
