@@ -18,15 +18,15 @@
             keys: ["hi", "hello", "hey", "yo", "name", "who are you"],
             html:
                 "<h3>Hey, I'm Juliana's assistant 👋</h3>" +
-                "<p>I can answer quick questions about Juliana Doe — a WordPress designer &amp; developer based in Australia. Try asking about her <strong>services</strong>, <strong>projects</strong>, <strong>resume</strong> or how to <strong>get in touch</strong>.</p>"
+                "<p>I can answer quick questions about Juliana Doe — a Full Stack Developer based in Australia. Try asking about her <strong>services</strong>, <strong>projects</strong>, <strong>resume</strong> or how to <strong>get in touch</strong>.</p>"
         },
         {
             id: "about",
             keys: ["about", "who is juliana", "bio"],
             html:
                 "<h3>About Juliana</h3>" +
-                "<p>Juliana is a WordPress designer and developer based in Australia who builds powerful products for people and businesses.</p>" +
-                "<p>She focuses on first-rate experiences — clean design paired with dependable, well-built front ends — for creative brands and small businesses alike.</p>"
+                "<p>Juliana is a Full Stack Developer based in Australia who builds powerful products for people and businesses.</p>" +
+                "<p>She focuses on first-rate experiences — clean, dependable code across the full stack, from frontend to backend — for teams and businesses alike.</p>"
         },
         {
             id: "services",
@@ -34,9 +34,9 @@
             html:
                 "<h3>What Juliana offers</h3>" +
                 "<ul>" +
-                "<li><strong>Branding</strong> — identity, logo and visual direction for new and growing brands.</li>" +
-                "<li><strong>Web Design</strong> — WordPress builds and custom front ends that feel fast and intentional.</li>" +
-                "<li><strong>Marketing</strong> — launch-ready sites built with visibility and conversion in mind.</li>" +
+                "<li><strong>Frontend Development</strong> — fast, responsive interfaces built with React and modern JavaScript.</li>" +
+                "<li><strong>Backend Development</strong> — APIs, databases and server-side logic that scale.</li>" +
+                "<li><strong>DevOps &amp; Deployment</strong> — CI/CD pipelines and cloud infrastructure, launch-ready.</li>" +
                 "</ul>" +
                 "<p>See the full breakdown on the <a class=\"ai-inline-link\" href=\"about.html\">About page</a>.</p>"
         },
@@ -45,8 +45,8 @@
             keys: ["work", "project", "projects", "portfolio", "case study"],
             html:
                 "<h3>Recent work</h3>" +
-                "<p>A mix of brand, design, development and logo projects, filterable by category on the Projects page.</p>" +
-                "<div class=\"ai-chip-row\"><span>Brands</span><span>Design</span><span>Development</span><span>Logo</span></div>" +
+                "<p>A mix of frontend, backend and full stack projects, filterable by category on the Projects page.</p>" +
+                "<div class=\"ai-chip-row\"><span>Web Development</span><span>WordPress</span><span>Web Design</span></div>" +
                 "<p style=\"margin-top:10px\">Browse it all on <a class=\"ai-inline-link\" href=\"projects.html\">the Projects page</a>.</p>"
         },
         {
@@ -54,18 +54,18 @@
             keys: ["resume", "cv", "experience", "education", "background", "history"],
             html:
                 "<h3>Experience &amp; education</h3>" +
-                "<p>8+ years of freelance and studio experience, plus a Diploma in Web Design and a Certificate in Digital Marketing.</p>" +
+                "<p>8+ years of freelance and studio experience, plus a B.Sc. in Computer Science and a Certificate in Cloud Computing.</p>" +
                 "<p>Full timeline and skill breakdown on the <a class=\"ai-inline-link\" href=\"resume.html\">Resume page</a>.</p>"
         },
         {
             id: "skills",
-            keys: ["skill", "skills", "tools", "tech", "technology", "wordpress"],
+            keys: ["skill", "skills", "tools", "tech", "technology", "react", "node"],
             html:
                 "<h3>Tools &amp; skills</h3>" +
                 "<ul>" +
-                "<li>WordPress design &amp; development</li>" +
-                "<li>HTML, CSS &amp; front-end build-outs</li>" +
-                "<li>Branding &amp; visual identity</li>" +
+                "<li>JavaScript, TypeScript &amp; React</li>" +
+                "<li>Node.js, REST &amp; GraphQL APIs</li>" +
+                "<li>Git, Docker &amp; CI/CD</li>" +
                 "</ul>" +
                 "<p>See the full skill bars on the <a class=\"ai-inline-link\" href=\"resume.html\">Resume page</a>.</p>"
         },

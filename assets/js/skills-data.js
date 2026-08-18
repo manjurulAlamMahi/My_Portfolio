@@ -12,31 +12,35 @@
 window.SKILLS = {
     technical: [
         {
-            category: "Development",
+            category: "Frontend",
             items: [
-                { name: "WordPress", level: 95 },
-                { name: "HTML & CSS", level: 92 },
-                { name: "JavaScript", level: 80 }
+                { name: "JavaScript / TypeScript", level: 92 },
+                { name: "React", level: 90 },
+                { name: "HTML & CSS", level: 95 }
             ]
         },
         {
-            category: "Design",
+            category: "Backend",
             items: [
-                { name: "Branding & Identity", level: 88 }
+                { name: "Node.js", level: 88 },
+                { name: "REST & GraphQL APIs", level: 85 },
+                { name: "SQL & NoSQL Databases", level: 82 }
             ]
         },
         {
-            category: "Marketing",
+            category: "Tools & DevOps",
             items: [
-                { name: "SEO Fundamentals", level: 75 }
+                { name: "Git & GitHub", level: 90 },
+                { name: "Docker", level: 75 },
+                { name: "CI/CD Pipelines", level: 70 }
             ]
         }
     ],
     soft: [
         { name: "Communication", icon: "fa-comments-o", note: "Clear, client-friendly updates from kickoff to launch." },
-        { name: "Problem Solving", icon: "fa-lightbulb-o", note: "Breaks ambiguous briefs down into shippable steps." },
-        { name: "Time Management", icon: "fa-clock-o", note: "Keeps multiple client projects on schedule." },
-        { name: "Collaboration", icon: "fa-users", note: "Works closely with designers, PMs and stakeholders." },
-        { name: "Adaptability", icon: "fa-refresh", note: "Comfortable moving between design and dev work." }
+        { name: "Problem Solving", icon: "fa-lightbulb-o", note: "Breaks ambiguous requirements down into shippable steps." },
+        { name: "Time Management", icon: "fa-clock-o", note: "Keeps multiple projects on schedule." },
+        { name: "Collaboration", icon: "fa-users", note: "Works closely with designers, PMs and other engineers." },
+        { name: "Adaptability", icon: "fa-refresh", note: "Comfortable moving between frontend and backend work." }
     ]
 };

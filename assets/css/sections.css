@@ -730,6 +730,13 @@
     object-fit: contain;
 }
 
+.tools-row .tool i {
+    display: block;
+    font-size: 40px;
+    line-height: 1;
+    color: #131212;
+}
+
 /* ---------------- TESTIMONIALS ---------------- */
 .about-testimonials {
     background: #fff;

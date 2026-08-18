@@ -49,7 +49,7 @@ Version      : 1.0
 
         if (typedLine1Target && typedLine2Target) {
             var typedLine1Text = 'Hi, I am Juliana Doe';
-            var typedLine2Text = 'WordPress Designer, UI/UX Designer & Developer';
+            var typedLine2Text = 'Full Stack Developer';
             var typedLine1SpeedMs = 45;
             var typedLine2SpeedMs = 30;
             var typedLineGapMs = 400;

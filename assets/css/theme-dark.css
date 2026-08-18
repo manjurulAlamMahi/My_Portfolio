@@ -169,7 +169,8 @@ html.dark-mode .whatido-card:hover a {
 
 html.dark-mode .whatido-card i,
 html.dark-mode .whatido-card a,
-html.dark-mode .edu-card i {
+html.dark-mode .edu-card i,
+html.dark-mode .tools-row .tool i {
     color: #f2f2f2;
 }
 
