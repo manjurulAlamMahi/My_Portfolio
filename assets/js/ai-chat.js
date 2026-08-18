@@ -89,15 +89,23 @@
 
     function findTopic(message) {
         var text = message.toLowerCase();
+        var bestTopic = null;
+        var bestKeyLength = -1;
+
         for (var i = 0; i < knowledgeBase.length; i++) {
             var topic = knowledgeBase[i];
             for (var j = 0; j < topic.keys.length; j++) {
-                if (text.indexOf(topic.keys[j]) !== -1) {
-                    return topic;
+                var key = topic.keys[j];
+                // Prefer the longest (most specific) matching keyword so that,
+                // e.g., "resume" wins over "about" in "Tell me about your resume".
+                if (text.indexOf(key) !== -1 && key.length > bestKeyLength) {
+                    bestTopic = topic;
+                    bestKeyLength = key.length;
                 }
             }
         }
-        return knowledgeBase[knowledgeBase.length - 1];
+
+        return bestTopic || knowledgeBase[knowledgeBase.length - 1];
     }
 
     // ---- rendering --------------------------------------------------------
