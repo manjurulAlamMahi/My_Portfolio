@@ -1,0 +1,917 @@
+/*
+* ----------------------------------------------------------------------------------------
+* SHARED EXTENDED SECTIONS (Home, About, Resume, Projects)
+* Colors / type reuse the site's existing palette (#131212, #F7F7F7, #333, #8d8d8d)
+* Layout ideas borrowed from the "Sections Demo" one-pager: intro + availability badge,
+* stat counters, skills bars, resume timeline, tool strip, testimonials, sliding marquee.
+* ----------------------------------------------------------------------------------------
+*/
+
+.ext-page-body {
+    overflow-x: hidden;
+}
+
+/* ---------------- PAGE TITLE BANNER (compact) ----------------
+   Was 90px margin + 100/120px padding, sized to clear the old full-width
+   fixed header. Trimmed down now that the nav is a small floating pill. */
+.page-title-area {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.about-section-title {
+    margin-bottom: 40px;
+}
+
+.about-section-title span {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8d8d8d;
+    margin-bottom: 10px;
+}
+
+.about-section-title h2 {
+    margin: 0;
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 30px;
+    color: #131212;
+}
+
+/* ---------------- HOME: HERO ROLE TAGLINE ---------------- */
+.hero-role-tagline {
+    margin: 14px 0 0;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #8d8d8d;
+}
+
+/* tighten the gap between the hero greeting and the intro paragraph below it
+   without touching .header-bg / .about-block, which are both reused elsewhere */
+.welcome-image-areaa .header-bg {
+    padding-bottom: 20px;
+}
+
+.welcome-image-areaa + .about-block {
+    padding-top: 15px;
+}
+
+/* ---------------- HOME: INTRO CTA + BUTTONS ---------------- */
+.home-intro-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    color: #333;
+    margin: 0 0 30px;
+}
+
+.home-intro-actions {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.home-btn {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 30px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.home-btn-dark {
+    background: #131212;
+    color: #fff;
+    border: 1px solid #131212;
+}
+
+.home-btn-dark:hover {
+    background: transparent;
+    color: #131212;
+}
+
+.home-btn-outline {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    background: transparent;
+    color: #131212;
+    border: 1px solid #ddd;
+}
+
+.home-btn-outline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #000000 0%, #4a4a4a 55%, #000000 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.home-btn-outline:hover {
+    color: #fff;
+    border-color: #131212;
+}
+
+.home-btn-outline:hover::before {
+    opacity: 1;
+}
+
+.home-btn-light {
+    background: #fff;
+    color: #131212;
+    border: 1px solid #fff;
+    margin-top: 10px;
+}
+
+.home-btn-light:hover {
+    background: transparent;
+    color: #fff;
+}
+
+/* ---------------- HOME: CONTACT CTA BAND ---------------- */
+.home-contact-cta {
+    background: #131212;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.home-contact-cta .about-section-title span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.home-contact-cta .about-section-title h2 {
+    color: #fff;
+}
+
+.home-contact-cta p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+/* ---------------- HERO / INTRO ---------------- */
+.about-hero {
+    background: #F7F7F7;
+}
+
+.about-hero-inner {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-hero-media {
+    flex: 0 0 300px;
+    text-align: center;
+    position: relative;
+}
+
+.about-hero-media img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #fff;
+}
+
+.about-availability {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    padding: 9px 18px;
+    margin-top: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.about-availability .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3ecf6a;
+    display: inline-block;
+    position: relative;
+}
+
+.about-availability .dot::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    border: 1px solid #3ecf6a;
+    animation: aboutPulse 1.8s infinite ease-out;
+}
+
+@keyframes aboutPulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+.about-hero-content h1 {
+    font-size: 34px;
+    font-weight: 300;
+    color: #131212;
+    margin: 0 0 8px;
+}
+
+.about-hero-content h1 strong {
+    font-weight: 600;
+}
+
+.about-hero-content .role {
+    font-size: 16px;
+    color: #8d8d8d;
+    margin: 0 0 24px;
+    text-transform: capitalize;
+}
+
+.about-hero-content p {
+    color: #333;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+
+.about-social-row {
+    margin-top: 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.about-social-row li {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.about-social-row a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #ddd;
+    color: #131212;
+    background: #fff;
+}
+
+.about-social-row a:hover {
+    background: #131212;
+    color: #fff;
+    border-color: #131212;
+}
+
+/* ---------------- STATS ---------------- */
+.about-stats {
+    background: #131212;
+    padding: 60px 0;
+}
+
+.about-stats-row {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.about-stat {
+    flex: 1 1 25%;
+    padding: 20px 15px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-stat:last-child {
+    border-right: 0;
+}
+
+.about-stat .num {
+    font-size: 42px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.about-stat .num::after {
+    content: attr(data-suffix);
+}
+
+.about-stat .label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+/* ---------------- WHAT I DO ---------------- */
+.about-whatido {
+    background: #fff;
+}
+
+.whatido-card {
+    background: #F7F7F7;
+    padding: 50px 30px;
+    text-align: center;
+    height: 100%;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.whatido-card:hover {
+    background: #131212;
+}
+
+.whatido-card:hover h3,
+.whatido-card:hover p,
+.whatido-card:hover i,
+.whatido-card:hover a {
+    color: #fff !important;
+}
+
+.whatido-card i {
+    font-size: 40px;
+    color: #131212;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.whatido-card h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #131212;
+    margin: 0 0 12px;
+    text-transform: capitalize;
+}
+
+.whatido-card p {
+    color: #8d8d8d;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.whatido-card a {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #131212;
+    border-bottom: 1px solid #131212;
+    padding-bottom: 2px;
+}
+
+/* ---------------- INLINE CTA (links between About / Resume / Projects) ---------------- */
+.about-resume-cta,
+.inline-cta {
+    background: #fff;
+    text-align: center;
+    padding: 0 0 70px;
+}
+
+.about-resume-cta p,
+.inline-cta p {
+    font-size: 16px;
+    color: #8d8d8d;
+    margin: 0 0 16px;
+}
+
+.about-resume-cta a,
+.inline-cta a {
+    display: inline-block;
+    color: #131212;
+    border-bottom: 1px solid #131212;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+}
+
+.about-resume-cta a i,
+.inline-cta a i {
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+/* ---------------- SKILLS ---------------- */
+.about-skills {
+    background: #F7F7F7;
+}
+
+/* soft skills reuses .about-skills but sits on white, so it reads as a
+   distinct block instead of merging into the technical skills bg above it */
+.about-soft-skills {
+    background: #fff;
+}
+
+/* ---------------- SKILLS: CATEGORY TABS ----------------
+   Data-driven from assets/js/skills-data.js / skills-render.js — adding a
+   category there (e.g. "DevOps") adds a tab here automatically. */
+.skills-tab-buttons {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.skills-tab-btn {
+    background: none;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 9px 22px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.skills-tab-btn:hover {
+    border-color: #131212;
+}
+
+.skills-tab-btn.active {
+    background: #131212;
+    border-color: #131212;
+    color: #fff;
+}
+
+.skills-tab-panel {
+    display: none;
+}
+
+.skills-tab-panel.active {
+    display: block;
+}
+
+.skill-row {
+    margin-bottom: 26px;
+}
+
+.skill-row:last-child {
+    margin-bottom: 0;
+}
+
+.skill-row-head {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.skill-row-head .pct {
+    color: #8d8d8d;
+}
+
+.skill-bar-track {
+    width: 100%;
+    height: 4px;
+    background: #e4e4e4;
+}
+
+/* ---------------- SOFT SKILLS: CARDS ----------------
+   Data-driven from assets/js/skills-data.js — no percentage, just a quick
+   scan of what the skill means day-to-day. */
+.soft-skills-grid {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.soft-skill-card {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1 1 calc(50% - 16px);
+    min-width: 220px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    -webkit-transition: border-color 0.25s;
+    transition: border-color 0.25s;
+}
+
+.soft-skill-card:hover {
+    border-color: #131212;
+}
+
+.soft-skill-icon {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #131212;
+    color: #fff;
+    font-size: 15px;
+}
+
+.soft-skill-text h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #131212;
+}
+
+.soft-skill-text p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: #8d8d8d;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0;
+    background: #131212;
+    transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------------- MARQUEE ---------------- */
+.about-marquee {
+    background: #131212;
+    overflow: hidden;
+    padding: 26px 0;
+}
+
+.marquee-track {
+    display: -webkit-flex;
+    display: flex;
+    width: max-content;
+    animation: aboutMarquee 22s linear infinite;
+}
+
+.marquee-track span {
+    font-size: 34px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+    white-space: nowrap;
+    padding: 0 30px;
+}
+
+.marquee-track span.solid {
+    color: #fff;
+    -webkit-text-stroke: 0;
+}
+
+@keyframes aboutMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ---------------- RESUME (EXPERIENCE + EDUCATION) ---------------- */
+.about-resume {
+    background: #fff;
+}
+
+.resume-columns {
+    display: -webkit-flex;
+    display: flex;
+    gap: 60px;
+}
+
+.resume-col {
+    flex: 1;
+}
+
+.resume-col-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8d8d8d;
+    margin-bottom: 26px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 30px;
+    border-left: 1px solid #e4e4e4;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #131212;
+}
+
+.timeline-item .date {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8d8d8d;
+    margin-bottom: 6px;
+}
+
+.timeline-item h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #131212;
+    margin: 0 0 8px;
+}
+
+.timeline-item h4 span {
+    font-weight: 300;
+    font-style: italic;
+    color: #8d8d8d;
+}
+
+.timeline-item p {
+    font-size: 14px;
+    color: #8d8d8d;
+    line-height: 22px;
+    margin: 0;
+}
+
+.edu-card {
+    background: #F7F7F7;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.edu-card:last-child {
+    margin-bottom: 0;
+}
+
+.edu-card i {
+    font-size: 26px;
+    color: #131212;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.edu-card h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #131212;
+    margin: 0 0 4px;
+}
+
+.edu-card p {
+    font-size: 13px;
+    color: #8d8d8d;
+    margin: 0;
+}
+
+/* ---------------- TOOLS STRIP ---------------- */
+.about-tools {
+    background: #F7F7F7;
+}
+
+.tools-row {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tools-row .tool {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 10px 20px;
+    opacity: 0.55;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+}
+
+.tools-row .tool:hover {
+    opacity: 1;
+}
+
+.tools-row .tool img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* ---------------- TESTIMONIALS ---------------- */
+.about-testimonials {
+    background: #fff;
+}
+
+.testimonial-viewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: -webkit-flex;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.testimonial-card {
+    background: #F7F7F7;
+    padding: 50px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.testimonial-card i.fa-quote-left {
+    font-size: 22px;
+    color: #131212;
+    margin-bottom: 20px;
+}
+
+.testimonial-card .stars {
+    color: #131212;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.testimonial-card p {
+    font-size: 17px;
+    font-weight: 300;
+    color: #333;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.testimonial-card h5 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #131212;
+    margin: 0;
+}
+
+.testimonial-card span {
+    font-size: 12px;
+    color: #8d8d8d;
+}
+
+.testimonial-nav {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.testimonial-nav button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 0;
+    padding: 0;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.testimonial-nav button.active {
+    background: #131212;
+}
+
+/* ---------------- SHARED CONTAINER SPACING ---------------- */
+.about-block {
+    padding: 70px 0;
+}
+
+/* ---------------- REVEAL ANIMATION HOOK ---------------- */
+.about-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media only screen and (max-width: 991px) {
+    .about-hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .resume-columns {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-stat {
+        flex: 1 1 50%;
+        border-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .about-block {
+        padding: 50px 0;
+    }
+
+    .about-hero-media img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 26px;
+    }
+
+    .tools-row .tool img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    .project-filters button {
+        margin-bottom: 10px;
+    }
+}
+
+/* ---------------- PROJECT FILTERS ---------------- */
+.project-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-filters button {
+    background: none;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 9px 22px;
+    margin: 0 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.project-filters button:hover {
+    border-color: #131212;
+}
+
+.project-filters button.active {
+    background: #131212;
+    border-color: #131212;
+    color: #fff;
+}
+
+.project-grid-item {
+    -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-grid-item.is-hidden {
+    display: none;
+}
