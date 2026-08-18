@@ -4,6 +4,8 @@
 * Applies the "dark-mode" class to <html>. Persisted in localStorage, respects the
 * OS color-scheme preference on first visit. Pairs with the early inline snippet in
 * <head> (prevents a flash of the wrong theme) and assets/css/theme-dark.css.
+* Drives every element with a [data-theme-toggle] attribute on the page (the desktop
+* floating-nav button and the mobile floating button both carry it).
 * ----------------------------------------------------------------------------------------
 */
 
@@ -12,26 +14,27 @@
 
     var STORAGE_KEY = "pretty-theme";
     var root = document.documentElement;
-    var btn = document.getElementById("themeToggle");
+    var btns = document.querySelectorAll("[data-theme-toggle]");
 
-    function updateIcon() {
-        if (!btn) return;
-        var icon = btn.querySelector("i");
-        if (!icon) return;
-        icon.className = root.classList.contains("dark-mode") ? "fa fa-sun-o" : "fa fa-moon-o";
+    function updateIcons() {
+        var dark = root.classList.contains("dark-mode");
+        for (var i = 0; i < btns.length; i++) {
+            var icon = btns[i].querySelector("i");
+            if (icon) icon.className = dark ? "fa fa-sun-o" : "fa fa-moon-o";
+        }
     }
 
-    updateIcon();
+    updateIcons();
 
-    if (btn) {
-        btn.addEventListener("click", function () {
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
             root.classList.toggle("dark-mode");
             try {
                 localStorage.setItem(STORAGE_KEY, root.classList.contains("dark-mode") ? "dark" : "light");
             } catch (e) {
                 /* localStorage unavailable (e.g. private mode) — theme just won't persist */
             }
-            updateIcon();
+            updateIcons();
         });
     }
 })();

@@ -76,6 +76,10 @@ body.ai-chat-body {
 }
 
 .ai-chat-back {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: #fff;
     text-decoration: none;
     font-size: 12px;
@@ -266,6 +270,10 @@ body.ai-chat-body {
 
 .ai-suggestion-btn {
     flex-shrink: 0;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     background: #fff;
     border: 1px solid #e4e4e4;
     color: #333;
@@ -321,8 +329,8 @@ body.ai-chat-body {
 }
 
 .ai-send-btn {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #131212;
     color: #fff;

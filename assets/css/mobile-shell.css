@@ -1,0 +1,326 @@
+/*
+* ----------------------------------------------------------------------------------------
+* MOBILE APP SHELL (phones, <768px)
+* Bottom tab bar + floating theme toggle, replacing the fixed top header/hamburger menu
+* on phone-width screens. Tablet (768-991px) keeps the existing top nav (see responsive.css
+* for its touch-target touch-up). Desktop (>=992px) is untouched — see sidebar.css /
+* floating-nav.css for that shell.
+* ----------------------------------------------------------------------------------------
+*/
+
+.mobile-tabbar,
+.mobile-theme-toggle,
+.about-resume-mobile-cta {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* the old fixed top header/hamburger is replaced by the tab bar + floating toggle */
+    .header-top-area {
+        display: none;
+    }
+
+    /* no more fixed header to clear space for */
+    .welcome-image-areaa {
+        margin-top: 20px;
+    }
+
+    .page-title-area {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    /* leave room for the fixed bottom tab bar so content/footer never sit under it */
+    body {
+        padding-bottom: 72px;
+    }
+
+    /* ---------------- BOTTOM TAB BAR ---------------- */
+    .mobile-tabbar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1002;
+        background: #fff;
+        border-top: 1px solid #ececec;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .mobile-tabbar ul {
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mobile-tabbar li {
+        flex: 1 1 0;
+    }
+
+    .mobile-tabbar a {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        min-height: 58px;
+        padding: 8px 4px 6px;
+        color: #8d8d8d;
+        text-decoration: none;
+    }
+
+    .mobile-tabbar a i {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .mobile-tabbar a span {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .mobile-tabbar li.active a {
+        color: #131212;
+    }
+
+    /* ---------------- FLOATING THEME TOGGLE ---------------- */
+    .mobile-theme-toggle {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 1002;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(19, 18, 18, 0.85);
+        color: #fff;
+        font-size: 15px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    /* ---------------- ABOUT PAGE: "VIEW FULL RESUME" CARD ---------------- */
+    .about-resume-mobile-cta {
+        display: block;
+        padding: 0 15px;
+        margin: 20px 0 10px;
+    }
+
+    .about-resume-mobile-card {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #131212;
+        color: #fff;
+        padding: 16px 18px;
+        text-decoration: none;
+        min-height: 44px;
+    }
+
+    .about-resume-mobile-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 16px;
+    }
+
+    .about-resume-mobile-text {
+        flex: 1;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .about-resume-mobile-text strong {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .about-resume-mobile-text small {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .about-resume-mobile-card > i.fa-chevron-right {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ---------------------------------------------------------------------
+       MOBILE CONTENT AUDIT: section rhythm, typography, touch targets,
+       card reflow, and the contact form — across index/about/resume/
+       projects/project-details/contact. Lives in this file (not
+       responsive.css) because this stylesheet loads last, after
+       sections.css/sidebar.css/floating-nav.css — those define several of
+       these same selectors, and equal-specificity rules in a stylesheet
+       loaded earlier in <head> lose the cascade.
+       --------------------------------------------------------------------- */
+
+    /* ---- section rhythm ---- */
+    .about-block,
+    .work,
+    .contact-me-area {
+        padding: 32px 0;
+    }
+
+    .about-section-title h2 {
+        font-size: 22px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    /* ---- touch targets: 44px minimum on every tappable control ---- */
+    .home-btn,
+    .whatido-card a,
+    .about-resume-cta a,
+    .inline-cta a,
+    .more-portfolio {
+        min-height: 44px;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-form input[type='submit'] {
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-social-row a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .project-filters button,
+    .skills-tab-btn {
+        min-height: 44px;
+        padding: 10px 18px;
+        margin: 0 5px 10px;
+    }
+
+    .testimonial-nav button {
+        /* box-sizing is border-box site-wide (Bootstrap reset), so the
+           width below is the full tap target; padding eats into it to
+           leave a 10px visible dot in the center via content-box clip */
+        width: 44px;
+        height: 44px;
+        padding: 17px;
+        background-clip: content-box;
+        -webkit-background-clip: content-box;
+    }
+
+    /* ---- cards: tighter padding, single-column reflow ---- */
+    .whatido-card {
+        padding: 30px 20px;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    .edu-card {
+        padding: 22px;
+    }
+
+    .resume-columns {
+        display: block;
+    }
+
+    .resume-col + .resume-col {
+        margin-top: 40px;
+    }
+
+    .about-hero-inner {
+        display: block;
+        text-align: center;
+    }
+
+    .about-hero-media {
+        flex: none;
+        margin-bottom: 24px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 26px;
+    }
+
+    .about-stats-row {
+        flex-wrap: wrap;
+    }
+
+    .about-stat {
+        flex: 1 1 50%;
+        padding: 16px 10px;
+        border-right: none;
+        margin-bottom: 12px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   TABLET TOUCH-UP (768-991px): 44px minimum tap targets on the existing
+   top nav. No structural changes — see responsive.css for the tablet
+   layout rules this supplements. Placed here (not responsive.css) for
+   the same cascade-order reason as the mobile audit block above.
+   --------------------------------------------------------------------- */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    .mainmenu .navbar-nav li a {
+        padding: 14px 15px;
+        min-height: 44px;
+        display: block;
+    }
+
+    .navbar-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 12px;
+    }
+
+    .project-filters button,
+    .skills-tab-btn,
+    .home-btn,
+    .contact-form input[type='submit'] {
+        min-height: 44px;
+    }
+
+    .about-social-row a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .testimonial-nav button {
+        /* box-sizing is border-box site-wide (Bootstrap reset), so the
+           width below is the full tap target; padding eats into it to
+           leave a 10px visible dot in the center via content-box clip */
+        width: 44px;
+        height: 44px;
+        padding: 17px;
+        background-clip: content-box;
+        -webkit-background-clip: content-box;
+    }
+}
