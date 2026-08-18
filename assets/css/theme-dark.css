@@ -91,8 +91,16 @@ html.dark-mode .about-social-row a,
 html.dark-mode .more-portfolio,
 html.dark-mode .single-contact i,
 html.dark-mode .project-filters button,
-html.dark-mode .skills-tab-btn {
+html.dark-mode .skills-tab-btn,
+html.dark-mode .about-resume-cta a,
+html.dark-mode .inline-cta a,
+html.dark-mode .contact-form input[type='submit'] {
     color: #e0e0e0;
+}
+
+html.dark-mode .about-resume-cta a,
+html.dark-mode .inline-cta a {
+    border-bottom-color: #e0e0e0;
 }
 
 html.dark-mode .skill-row-head .pct,

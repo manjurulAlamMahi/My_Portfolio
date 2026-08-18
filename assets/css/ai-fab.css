@@ -25,6 +25,30 @@
     font-family: 'Segoe UI';
 }
 
+/* ping ring for the whole button — a ghost copy of the button that expands
+   and fades, repeating, to keep AI Assistant highlighted as the sole
+   mobile route into ai-chat.html */
+.ai-fab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: #131212;
+    z-index: -1;
+    animation: aiFabPulse 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes aiFabPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
 .ai-fab:hover {
     color: #fff;
     background: #000;
@@ -43,7 +67,7 @@
     border-radius: 50%;
     background: #fff;
     color: #131212;
-    font-size: 12px;
+    font-size: 14px;
     flex-shrink: 0;
     position: relative;
 }
@@ -58,32 +82,6 @@
     background: #4ADE80;
     border-radius: 50%;
     border: 2px solid #131212;
-    z-index: 1;
-}
-
-/* pulsing "ping" ring behind the online dot, to keep the AI Assistant
-   entry point highlighted since it's the only mobile route into ai-chat.html */
-.ai-fab .ai-fab-icon::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    width: 8px;
-    height: 8px;
-    background: #4ADE80;
-    border-radius: 50%;
-    animation: aiFabPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes aiFabPing {
-    0% {
-        transform: scale(1);
-        opacity: 0.7;
-    }
-    75%, 100% {
-        transform: scale(2.6);
-        opacity: 0;
-    }
 }
 
 .ai-fab .ai-fab-label {
