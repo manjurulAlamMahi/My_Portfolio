@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="32" viewBox="0 0 132 32">
+  <rect x="0" y="4" width="24" height="24" rx="6" fill="#0d0d0d"/>
+  <path d="M6 22V10h3.2l3.3 6 3.3-6H19v12h-3v-7.2l-2.5 4.6h-2L9 14.8V22H6z" fill="#ffffff"/>
+  <text x="30" y="22" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#0d0d0d">Max<tspan fill="#5b6cff">Dev</tspan></text>
+</svg>

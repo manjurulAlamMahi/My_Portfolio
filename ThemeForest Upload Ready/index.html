@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- EARLY THEME APPLY (prevents flash of wrong theme) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('maxdev-theme');
+                var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) document.documentElement.classList.add('dark-mode');
+            } catch (e) {}
+        })();
+    </script>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MaxDev — a modern, minimal portfolio &amp; personal site template">
+    <meta name="keywords" content="minimal, creative, fresh, portfolio, personal, developer, resume, onepage, clean, modern">
+    <meta name="author" content="MaxDev">
+    <!-- PAGE TITLE -->
+    <title>MaxDev — Modern Portfolio &amp; Personal Site Template</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <!-- REMIX ICON CSS (AI Assistant floating icon) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css">
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- BASE STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <!-- AI CHAT BUTTON CSS -->
+    <link rel="stylesheet" href="assets/css/ai-fab.css?v=3">
+    <!-- SHARED SECTIONS CSS -->
+    <link rel="stylesheet" href="assets/css/sections.css?v=2">
+    <!-- PROJECT CARDS CSS -->
+    <link rel="stylesheet" href="assets/css/project-cards.css">
+    <!-- FIXED SIDEBAR CSS -->
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <!-- FLOATING GLASS NAV CSS -->
+    <link rel="stylesheet" href="assets/css/floating-nav.css">
+    <!-- MOBILE APP SHELL CSS -->
+    <link rel="stylesheet" href="assets/css/mobile-shell.css?v=2">
+    <!-- DARK THEME CSS -->
+    <link rel="stylesheet" href="assets/css/theme-dark.css?v=4">
+</head>
+
+<body>
+    <!-- ====================== Fixed Profile Sidebar ====================== -->
+    <aside class="site-sidebar">
+        <div class="sidebar-avatar">
+            <img src="assets/images/avatar-placeholder.svg" alt="Alex Morgan">
+        </div>
+        <h2 class="sidebar-name">Alex Morgan</h2>
+        <p class="sidebar-role">Full Stack Developer</p>
+        <span class="sidebar-location"><i class="fa fa-map-marker"></i> Remote</span>
+        <span class="sidebar-current-page">Viewing <strong>Home</strong></span>
+        <ul class="sidebar-social">
+            <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <a href="ai-chat.html" class="sidebar-ai-btn"><i class="fa fa-comments"></i> AI Assistant</a>
+    </aside>
+
+    <!-- ====================== Floating Glass Nav (desktop) ====================== -->
+    <nav class="floating-glass-nav" aria-label="Primary">
+        <ul class="glass-nav-links">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <span class="glass-nav-divider" aria-hidden="true"></span>
+        <button type="button" class="theme-toggle-btn" id="themeToggle" data-theme-toggle aria-label="Toggle dark mode">
+            <i class="fa fa-moon-o"></i>
+        </button>
+    </nav>
+
+    <!-- ====================== Mobile App Shell (phones) ====================== -->
+    <button type="button" class="mobile-theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <i class="fa fa-moon-o"></i>
+    </button>
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <div class="status">
+            <div class="status-mes"></div>
+        </div>
+    </div>
+    <!-- / END PRELOADER -->
+
+    <!-- START HOMEPAGE DESIGN AREA -->
+    <header id="home" class="site-header">
+        <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <!-- START LOGO DESIGN AREA -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo.svg" alt="MaxDev logo"></a>
+                        </div>
+                        <!-- END LOGO DESIGN AREA -->
+                    </div>
+                    <div class="col-sm-9">
+                        <!-- START MENU DESIGN AREA -->
+                        <div class="mainmenu">
+                            <div class="navbar navbar-nobg">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="nav-toggle hidden-xs">
+                                    <button class="toggle-btn" type="button" aria-label="Toggle navigation">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="active"><a class="smoth-scroll" href="index.html">Home <div class="ripple-wrapper"></div></a>
+                                        </li>
+                                        <li><a href="about.html">About</a>
+                                        </li>
+                                        <li><a href="resume.html">Resume</a>
+                                        </li>
+                                        <li><a href="projects.html">Projects</a>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END MENU DESIGN AREA -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- START HEADER DESIGN AREA -->
+    <div class="welcome-image-areaa">
+        <div class="container">
+            <div class="header-bg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-text">
+                            <h2 class="typed-heading"><span id="typed-line1" data-text="Hi, I'm Alex Morgan"></span><span class="typed-cursor" id="typedCursor1">|</span></h2>
+                            <p class="hero-role-tagline"><span id="typed-line2" data-text="Full Stack Developer"></span><span class="typed-cursor typed-cursor-hidden" id="typedCursor2">|</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END HEADER DESIGN AREA -->
+
+    <!-- START HOME INTRO / RESUME CTA AREA -->
+    <div class="about-block about-reveal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <p class="home-intro-text">I design and build fast, accessible web products end to end — from the first Figma frame to a deployed, monitored backend. Below is a snapshot of recent work; the Resume page has the full skill and experience breakdown.</p>
+                    <div class="home-intro-actions">
+                        <a href="about.html" class="home-btn home-btn-dark">Learn More</a>
+                        <a href="resume.html" class="home-btn home-btn-outline"><i class="fa fa-file-text-o"></i> View My Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / END HOME INTRO / RESUME CTA AREA -->
+
+    <!-- START WORK DESIGN AREA -->
+    <section id="work" class="work">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title">
+                        <h2>Top projects.</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- PROJECT GRID (built from assets/js/projects-data.js, same source as projects.html) -->
+            <div class="row" id="topProjectsGrid"></div>
+            <div class="view-portfolio">
+                <a class="more-portfolio" href="projects.html">More portfolio</a>
+            </div>
+        </div>
+    </section>
+    <!-- / END START WORK DESIGN AREA -->
+
+    <!-- START CONTACT ME CTA AREA -->
+    <div class="home-contact-cta about-reveal">
+        <div class="container">
+            <div class="about-section-title text-center">
+                <span>Get In Touch</span>
+                <h2>Have a project in mind?</h2>
+            </div>
+            <p>I'm always open to new projects and collaboration opportunities.</p>
+            <a href="contact.html" class="home-btn home-btn-light">Contact Me <i class="fa fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <!-- / END CONTACT ME CTA AREA -->
+
+
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="social-link-area">
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Linkedin</a></li>
+                        </ul>
+                    </div>
+                    <p>&copy; 2026 MaxDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+
+    <!-- ====================== AI Chat Floating Button ====================== -->
+    <a href="ai-chat.html" class="ai-fab">
+        <span class="ai-fab-icon"><i class="ri-ai"></i></span>
+        <span class="ai-fab-label">AI Assistant</span>
+    </a>
+
+    <nav class="mobile-tabbar" aria-label="Mobile">
+        <ul>
+            <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
+            <li><a href="resume.html"><i class="fa fa-file-text-o"></i><span>Resume</span></a></li>
+            <li class="active"><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+            <li><a href="projects.html"><i class="fa fa-folder-open"></i><span>Projects</span></a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- LATEST JQUERY -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- WOW JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- SITE CORE JS -->
+    <script src="assets/js/site.js?v=3"></script>
+    <!-- SHARED SECTIONS JS -->
+    <script src="assets/js/sections.js"></script>
+    <!-- PROJECT DATA (shared with projects.html / project-details.html) -->
+    <script src="assets/js/projects-data.js"></script>
+    <!-- HOME "TOP PROJECTS" RENDER JS -->
+    <script src="assets/js/home-projects.js"></script>
+    <!-- THEME TOGGLE JS -->
+    <script src="assets/js/theme.js?v=2"></script>
+</body>
+
+</html>

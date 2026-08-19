@@ -1,0 +1,107 @@
+/*
+* ----------------------------------------------------------------------------------------
+* AI CHAT — FLOATING ACTION BUTTON
+* Corner button, present on every page, links through to ai-chat.html
+* ----------------------------------------------------------------------------------------
+*/
+
+.ai-fab {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9999;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #131212;
+    color: #fff;
+    border-radius: 50px;
+    padding: 14px 20px 14px 16px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI';
+}
+
+/* ping ring for the whole button — a ghost copy of the button that expands
+   and fades, repeating, to keep AI Assistant highlighted as the sole
+   mobile route into ai-chat.html */
+.ai-fab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: #131212;
+    z-index: -1;
+    animation: aiFabPulse 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes aiFabPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+.ai-fab:hover {
+    color: #fff;
+    background: #000;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+}
+
+.ai-fab .ai-fab-icon {
+    width: 22px;
+    height: 22px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #131212;
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ai-fab .ai-fab-icon::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #4ADE80;
+    border-radius: 50%;
+    border: 2px solid #131212;
+}
+
+.ai-fab .ai-fab-label {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* phones: the AI Assistant is always visible here (it's no longer a tab in
+   the bottom nav — see mobile-shell.css), so it needs to sit above the
+   fixed tab bar instead of overlapping it, and stay compact */
+@media (max-width: 767px) {
+    .ai-fab {
+        right: 16px;
+        bottom: 84px;
+        padding: 14px;
+    }
+
+    .ai-fab .ai-fab-label {
+        display: none;
+    }
+}

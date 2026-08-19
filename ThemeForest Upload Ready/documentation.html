@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaxDev — Documentation</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Arial, sans-serif; max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; color: #232323; line-height: 1.6; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 48px; border-bottom: 1px solid #e6e4e0; padding-bottom: 8px; }
+  h3 { font-size: 16px; margin-top: 28px; }
+  code, pre { background: #f6f5f3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  pre { padding: 14px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th, td { text-align: left; border-bottom: 1px solid #e6e4e0; padding: 8px 10px; font-size: 14px; vertical-align: top; }
+  th { color: #8a8a8a; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  .muted { color: #8a8a8a; }
+  a { color: #5b6cff; }
+</style>
+</head>
+<body>
+
+<h1>MaxDev — Portfolio Template</h1>
+<p class="muted">Documentation &middot; Version 1.0</p>
+
+<h2>1. Overview</h2>
+<p>MaxDev is a static, no-build HTML/CSS/JS portfolio and personal-site template built on Bootstrap 3. There is no
+build step, package manager, or compiler required — open any <code>.html</code> file directly in a browser, or
+upload the whole folder to any static web host.</p>
+
+<h3>Pages included</h3>
+<table>
+<tbody>
+  <tr><th>File</th><th>Purpose</th></tr>
+  <tr><td><code>index.html</code></td><td>Home — hero, top projects, contact CTA</td></tr>
+  <tr><td><code>about.html</code></td><td>About — bio, stats, services, tools, testimonials</td></tr>
+  <tr><td><code>resume.html</code></td><td>Resume — skills, experience timeline, education</td></tr>
+  <tr><td><code>projects.html</code></td><td>Projects — filterable project grid</td></tr>
+  <tr><td><code>project-details.html</code></td><td>Case-study page (reads <code>?slug=</code> from the URL)</td></tr>
+  <tr><td><code>contact.html</code></td><td>Contact form + details</td></tr>
+  <tr><td><code>ai-chat.html</code></td><td>Optional AI-assistant demo page</td></tr>
+</tbody>
+</table>
+
+<h2>2. Customizing your content</h2>
+<h3>Your name, role and photo</h3>
+<p>The sidebar/profile block (name, role, location, avatar) is repeated at the top of the <code>&lt;body&gt;</code>
+in every page — search for <code>sidebar-name</code> in each HTML file and replace the text and
+<code>assets/images/avatar-placeholder.svg</code> reference with your own photo.</p>
+
+<h3>Projects</h3>
+<p>All project content lives in one file: <code>assets/js/projects-data.js</code>. Edit the <code>window.PROJECTS</code>
+array — the projects grid, filters, and case-study page all render from it automatically. No HTML editing required.</p>
+
+<h3>Skills / Resume</h3>
+<p>Edit <code>assets/js/skills-data.js</code> (<code>window.SKILLS</code>) to change the technical skill bars and
+soft-skill cards on the Resume page.</p>
+
+<h3>Contact form</h3>
+<p>The form in <code>contact.html</code> posts to a placeholder Formspree endpoint. Before going live, replace:</p>
+<pre>&lt;form id="contact-form" method="post" action="https://formspree.io/f/your-form-id"&gt;</pre>
+<p>with your own <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> endpoint (or any other
+form backend that accepts a standard HTML POST).</p>
+
+<h3>AI Assistant page (optional)</h3>
+<p><code>ai-chat.html</code> is a lightweight, client-side FAQ demo — it keyword-matches visitor questions against a
+small knowledge base in <code>assets/js/ai-chat.js</code> and has no server or API dependency. Edit the
+<code>knowledgeBase</code> array to change its answers, or remove the page and the <code>.ai-fab</code> button /
+"AI Chat" tab entirely if you don't want it.</p>
+
+<h2>3. File structure</h2>
+<pre>assets/
+  bootstrap/        Bootstrap 3 (grid, JS components)
+  css/
+    base.css        Core layout: header, hero, page banners, footer, forms
+    sections.css     Extended About/Resume/Projects sections
+    sidebar.css      Fixed desktop profile sidebar (>=992px)
+    floating-nav.css Floating glass nav pill (>=992px)
+    mobile-shell.css Bottom tab bar + mobile layout (&lt;768px)
+    theme-dark.css   Dark-mode overrides
+    project-cards.css / project-details.css
+    ai-fab.css / ai-chat.css
+    magnific-popup.css, animate.min.css   (third-party, see Credits)
+  fonts/             Font Awesome
+  images/            Logo, favicon, avatar and project placeholder graphics (all SVG)
+  js/
+    site.js          Preloader, header scroll state, nav toggle, smooth scroll, lightbox init
+    sections.js       Count-up stats, skill bars, scroll reveal, testimonial carousel
+    theme.js          Dark/light mode toggle
+    projects-data.js / projects-render.js / home-projects.js / project-details.js
+    skills-data.js / skills-render.js
+    ai-chat.js
+    jquery.min.js, jquery.magnific-popup.min.js, wow.min.js   (third-party, see Credits)
+</pre>
+
+<h2>4. Dark mode</h2>
+<p>Toggled by the button in the floating nav (desktop) or the floating circular button (mobile). The choice is saved
+to <code>localStorage</code> under the key <code>maxdev-theme</code> and respects the visitor's OS-level color
+scheme on first visit. No configuration needed.</p>
+
+<h2>5. Responsive breakpoints</h2>
+<table>
+<tbody>
+  <tr><th>Width</th><th>Layout</th></tr>
+  <tr><td>&ge; 992px</td><td>Fixed sidebar + floating glass nav</td></tr>
+  <tr><td>768&ndash;991px</td><td>Classic top header with hamburger menu</td></tr>
+  <tr><td>&lt; 768px</td><td>App-style shell: bottom tab bar, floating theme toggle, no top header</td></tr>
+</tbody>
+</table>
+
+<h2>6. Credits &amp; third-party licenses</h2>
+<table>
+<tbody>
+  <tr><th>Library</th><th>License</th></tr>
+  <tr><td>Bootstrap 3</td><td>MIT</td></tr>
+  <tr><td>jQuery</td><td>MIT</td></tr>
+  <tr><td>Font Awesome (icon font)</td><td>Icons: SIL OFL 1.1 &middot; CSS: MIT</td></tr>
+  <tr><td>Remix Icon (loaded via CDN)</td><td>Apache 2.0</td></tr>
+  <tr><td>Magnific Popup</td><td>MIT</td></tr>
+  <tr><td>Animate.css</td><td>MIT</td></tr>
+  <tr><td>WOW.js</td><td>MIT</td></tr>
+</tbody>
+</table>
+<p class="muted">All other code, layout, and graphics are original to this item.</p>
+
+<h2>7. Support</h2>
+<p>Questions about this item: <a href="mailto:manjurulalammahi@gmail.com">manjurulalammahi@gmail.com</a></p>
+
+</body>
+</html>
