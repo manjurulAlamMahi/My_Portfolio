@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Resume — Skills — MaxDev Admin</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/modules/resume.css">
+</head>
+<body>
+    <div class="db-shell">
+        <div id="shellSidebar"></div>
+        <div class="db-main-wrap">
+            <div id="shellHeader"></div>
+            <main class="db-main">
+                <div class="db-page-header">
+                    <div><h1>Resume — Skills</h1><p>Technical skill levels and soft skills shown on the Resume page</p></div>
+                </div>
+                <div class="db-card">
+                    <div class="db-card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                        Technical Skills
+                        <button type="button" class="db-pill-btn outline" id="addCategory"><i class="fa fa-plus"></i> Add Category</button>
+                    </div>
+                    <div id="skillCategories"></div>
+                    <button type="button" class="db-pill-btn accent" id="saveSkills">Save Technical Skills</button>
+                </div>
+                <div class="db-card" style="margin-top:20px;">
+                    <div class="db-card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                        Soft Skills
+                        <button type="button" class="db-pill-btn outline" id="addSoftSkill"><i class="fa fa-plus"></i> Add Soft Skill</button>
+                    </div>
+                    <div class="db-grid db-grid-3" id="softSkillsGrid" style="margin-top:14px;"></div>
+                    <button type="button" class="db-pill-btn accent" id="saveSoftSkills" style="margin-top:18px;">Save Soft Skills</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/paths.js"></script>
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/seed-data.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/guard.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/fullscreen.js"></script>
+    <script src="../assets/js/shell.js"></script>
+    <script src="../assets/js/pages/resume-skills.js"></script>
+</body>
+</html>

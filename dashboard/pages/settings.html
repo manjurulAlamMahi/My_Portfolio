@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Settings — MaxDev Admin</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/modules/uploader.css">
+    <link rel="stylesheet" href="../assets/css/modules/about.css">
+    <link rel="stylesheet" href="../assets/css/modules/settings.css">
+</head>
+<body>
+    <div class="db-shell">
+        <div id="shellSidebar"></div>
+        <div class="db-main-wrap">
+            <div id="shellHeader"></div>
+            <main class="db-main">
+                <div class="db-page-header">
+                    <div><h1>Settings</h1><p>Mail delivery and AI Assistant configuration</p></div>
+                </div>
+                <div class="db-tabstrip" id="tabStrip"></div>
+
+                <section class="db-tab-panel" data-tab="mail">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Mail Configuration</h3>
+                        <div class="db-settings-note"><i class="fa fa-info-circle"></i>Not yet connected to a real mail server. These fields are stored and ready for a backend to read once one is wired up.</div>
+                        <div class="db-form-row">
+                            <div class="db-form-group"><label for="mHost">SMTP Host</label><input id="mHost" class="db-input" placeholder="smtp.example.com"></div>
+                            <div class="db-form-group"><label for="mPort">SMTP Port</label><input id="mPort" type="number" class="db-input" placeholder="587"></div>
+                        </div>
+                        <div class="db-form-row">
+                            <div class="db-form-group"><label for="mUser">SMTP Username</label><input id="mUser" class="db-input"></div>
+                            <div class="db-form-group"><label for="mPass">SMTP Password</label><input id="mPass" type="password" class="db-input"></div>
+                        </div>
+                        <div class="db-form-row">
+                            <div class="db-form-group"><label for="mFromAddress">From Address</label><input id="mFromAddress" type="email" class="db-input"></div>
+                            <div class="db-form-group"><label for="mFromName">From Name</label><input id="mFromName" class="db-input"></div>
+                        </div>
+                        <button type="button" class="db-pill-btn accent" id="saveMail">Save Mail Settings</button>
+                    </div>
+                </section>
+
+                <section class="db-tab-panel" data-tab="ai">
+                    <div class="db-card">
+                        <h3 class="db-card-title">AI Assistant Configuration</h3>
+                        <div class="db-settings-note"><i class="fa fa-info-circle"></i>Governs the "Ask Alex" chat demo on the live site (<code>ai-chat.html</code>). Not yet wired to a real AI backend.</div>
+                        <div class="db-form-row">
+                            <div class="db-form-group"><label for="aName">Assistant Name (internal)</label><input id="aName" class="db-input"></div>
+                            <div class="db-form-group"><label for="aDisplayName">Display Name</label><input id="aDisplayName" class="db-input"></div>
+                        </div>
+                        <div class="db-form-group"><label for="aPersona">Persona / Tone</label><textarea id="aPersona" class="db-textarea"></textarea></div>
+                        <div class="db-form-group">
+                            <label>Knowledge Base (JSON)</label>
+                            <div id="kbUploader"></div>
+                        </div>
+                        <button type="button" class="db-pill-btn accent" id="saveAi">Save AI Settings</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/paths.js"></script>
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/seed-data.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/guard.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/fullscreen.js"></script>
+    <script src="../assets/js/uploader.js"></script>
+    <script src="../assets/js/shell.js"></script>
+    <script src="../assets/js/pages/settings.js"></script>
+</body>
+</html>

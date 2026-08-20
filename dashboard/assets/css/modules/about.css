@@ -1,0 +1,18 @@
+.db-tabstrip { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.db-tabstrip a {
+    padding: 9px 18px; border-radius: var(--db-radius-pill);
+    border: 1px solid var(--db-border); font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--db-muted); background: var(--db-surface);
+}
+.db-tabstrip a.active { background: var(--db-ink-strong); color: var(--db-ink-strong-contrast); border-color: var(--db-ink-strong); }
+.db-tab-panel { display: none; }
+.db-tab-panel.active { display: block; }
+
+.db-list-item { border: 1px solid var(--db-border); border-radius: var(--db-radius-card); padding: 20px 20px 16px; margin-bottom: 14px; margin-top: 4px; position: relative; overflow: visible; }
+.db-list-item .remove-btn { position: absolute; top: -10px; right: -10px; z-index: 2; }
+.db-stars-input { display: flex; gap: 4px; }
+.db-stars-input i { color: var(--db-border); cursor: pointer; font-size: 16px; }
+.db-stars-input i.filled { color: #f5b301; }
+.db-toolbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; margin-top: 6px; }
+.db-toolbox-item { border: 1px solid var(--db-border); border-radius: var(--db-radius-card); padding: 16px 12px 14px; text-align: center; position: relative; overflow: visible; }
+.db-toolbox-item .remove-btn { position: absolute; top: -9px; right: -9px; z-index: 2; }

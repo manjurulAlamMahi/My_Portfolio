@@ -1,0 +1,15 @@
+.db-skill-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.db-skill-row input[type="text"] { flex: 1; }
+.db-skill-row input[type="range"] { width: 140px; accent-color: var(--db-accent); }
+.db-skill-row .pct { width: 42px; text-align: right; font-size: 12.5px; color: var(--db-muted); }
+.db-skill-category { border: 1px solid var(--db-border); border-radius: var(--db-radius-card); padding: 18px; margin-bottom: 18px; }
+.db-skill-category h4 { margin: 0 0 14px; font-size: 13.5px; color: var(--db-ink); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.db-softskill-card { border: 1px solid var(--db-border); border-radius: var(--db-radius-card); padding: 18px 16px 16px; text-align: center; position: relative; overflow: visible; }
+.db-softskill-card i.icon { font-size: 20px; color: var(--db-accent); margin-bottom: 10px; display: block; }
+.db-softskill-card .remove-btn { position: absolute; top: -9px; right: -9px; z-index: 2; }
+
+.db-timeline-editor-item { border-left: 2px solid var(--db-border); padding: 4px 0 4px 22px; margin-bottom: 22px; position: relative; }
+.db-timeline-editor-item::before { content: ''; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--db-accent); }
+.db-timeline-editor-item .reorder { display: flex; gap: 6px; margin-top: 10px; }
+.db-timeline-editor-item .reorder button { font-size: 11px; padding: 6px 12px; }

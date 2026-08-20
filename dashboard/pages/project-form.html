@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Project Editor — MaxDev Admin</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/modules/uploader.css">
+    <link rel="stylesheet" href="../assets/css/modules/projects.css">
+</head>
+<body>
+    <div class="db-shell">
+        <div id="shellSidebar"></div>
+        <div class="db-main-wrap">
+            <div id="shellHeader"></div>
+            <main class="db-main">
+                <div class="db-page-header">
+                    <div><h1 id="formTitle">Add Project</h1><p>Every field below maps to a section of the project's case study page</p></div>
+                    <div style="display:flex;gap:10px;">
+                        <a href="projects.html" class="db-pill-btn outline">Cancel</a>
+                        <button type="button" class="db-pill-btn accent" id="saveProject">Save Project</button>
+                    </div>
+                </div>
+
+                <div class="db-grid db-grid-2">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Media</h3>
+                        <p class="db-card-subtitle">Thumbnail (grid/list), banner (case study header), screenshots</p>
+                        <div class="db-form-group"><label>Thumbnail</label><div id="thumbUploader"></div></div>
+                        <div class="db-form-group"><label>Banner</label><div id="bannerUploader"></div></div>
+                        <div class="db-form-group">
+                            <label>Screenshots</label>
+                            <div class="db-grid db-grid-2" id="screenshotsGrid"></div>
+                            <button type="button" class="db-pill-btn outline" id="addScreenshot" style="margin-top:10px;"><i class="fa fa-plus"></i> Add Screenshot</button>
+                        </div>
+                    </div>
+
+                    <div class="db-card">
+                        <h3 class="db-card-title">Details</h3>
+                        <div class="db-form-group"><label for="fTitle">Title</label><input id="fTitle" class="db-input"></div>
+                        <div class="db-form-row">
+                            <div class="db-form-group">
+                                <label for="fCategory">Category</label>
+                                <select id="fCategory" class="db-select"></select>
+                                <input id="fCategoryNew" class="db-input" style="display:none;margin-top:8px;" placeholder="New category name">
+                            </div>
+                            <div class="db-form-group"><label for="fStatus">Status</label>
+                                <select id="fStatus" class="db-select"><option value="Published">Published</option><option value="Draft">Draft</option></select>
+                            </div>
+                        </div>
+                        <div class="db-form-group"><label for="fShortDesc">Short Description</label><textarea id="fShortDesc" class="db-textarea"></textarea></div>
+                        <div class="db-form-group">
+                            <label>Tech Stack</label>
+                            <div class="db-tag-input-wrap" id="techTagWrap"><input type="text" id="techTagInput" placeholder="Type a technology and press Enter"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-card" style="margin-top:20px;">
+                    <h3 class="db-card-title">Case Study Content</h3>
+                    <div class="db-grid db-grid-2">
+                        <div class="db-form-group"><label for="fOverview">Overview</label><textarea id="fOverview" class="db-textarea"></textarea></div>
+                        <div class="db-form-group"><label for="fProblem">Problem</label><textarea id="fProblem" class="db-textarea"></textarea></div>
+                        <div class="db-form-group"><label for="fJourney">Journey</label><textarea id="fJourney" class="db-textarea"></textarea></div>
+                        <div class="db-form-group"><label for="fFunctionality">Functionality</label><textarea id="fFunctionality" class="db-textarea"></textarea></div>
+                    </div>
+                    <div class="db-form-group">
+                        <label>Key Features</label>
+                        <div id="featuresList"></div>
+                        <button type="button" class="db-pill-btn outline" id="addFeature"><i class="fa fa-plus"></i> Add Feature</button>
+                    </div>
+                </div>
+
+                <div class="db-card" style="margin-top:20px;">
+                    <h3 class="db-card-title">Links</h3>
+                    <div class="db-form-row">
+                        <div class="db-form-group"><label for="lGithub"><i class="fa fa-github"></i> GitHub</label><input id="lGithub" class="db-input"></div>
+                        <div class="db-form-group"><label for="lLive"><i class="fa fa-external-link"></i> Live URL</label><input id="lLive" class="db-input"></div>
+                        <div class="db-form-group"><label for="lFigma"><i class="fa fa-pencil-square-o"></i> Figma</label><input id="lFigma" class="db-input"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/paths.js"></script>
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/seed-data.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/guard.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/fullscreen.js"></script>
+    <script src="../assets/js/uploader.js"></script>
+    <script src="../assets/js/shell.js"></script>
+    <script src="../assets/js/pages/project-form.js"></script>
+</body>
+</html>

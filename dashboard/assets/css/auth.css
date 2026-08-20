@@ -1,0 +1,45 @@
+.db-auth-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--db-surface-alt);
+    padding: 20px;
+}
+
+.db-auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--db-surface);
+    border: 1px solid var(--db-border);
+    border-radius: 16px;
+    padding: 40px 34px;
+}
+
+.db-auth-brand { text-align: center; margin-bottom: 28px; }
+.db-auth-brand img { width: 44px; margin: 0 auto 14px; }
+.db-auth-brand h1 { font-size: 18px; font-weight: 500; margin: 0 0 4px; color: var(--db-ink); }
+.db-auth-brand p { font-size: 12px; color: var(--db-muted); margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+
+.db-auth-card .db-pill-btn { width: 100%; justify-content: center; padding: 13px 26px; }
+.db-auth-links { text-align: center; margin-top: 18px; font-size: 12.5px; color: var(--db-muted); }
+.db-auth-links a { color: var(--db-accent); }
+.db-auth-links a:hover { text-decoration: underline; }
+
+.db-auth-note {
+    background: var(--db-surface-alt);
+    border: 1px solid var(--db-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12.5px;
+    color: var(--db-muted);
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.db-otp-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+.db-otp-row input {
+    width: 44px; height: 52px; text-align: center; font-size: 20px;
+    border: 1px solid var(--db-border); border-radius: 8px; background: var(--db-surface); color: var(--db-ink);
+}
+.db-otp-row input:focus { outline: none; border-color: var(--db-accent); }

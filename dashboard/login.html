@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Admin Login — MaxDev Dashboard</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="db-auth-body">
+    <div class="db-auth-card">
+        <div class="db-auth-brand">
+            <img src="assets/images/logo.svg" alt="MaxDev">
+            <h1>Admin Dashboard</h1>
+            <p>Sign in to continue</p>
+        </div>
+        <form id="loginForm" novalidate>
+            <div class="db-form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="db-input" placeholder="admin@maxdev.com" required autocomplete="username">
+            </div>
+            <div class="db-form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="db-input" placeholder="••••••••" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="db-pill-btn accent">Login</button>
+        </form>
+        <p class="db-auth-links"><a href="forgot-password.html">Forgot Password?</a></p>
+    </div>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/pages/login.js"></script>
+</body>
+</html>

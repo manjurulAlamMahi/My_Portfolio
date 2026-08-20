@@ -1,0 +1,115 @@
+/*
+* Design tokens — mirrors assets/css/base.css / theme-dark.css from the live
+* site (../assets/css/base.css) so the dashboard reads as the same product.
+*/
+:root {
+    --db-ink: #0d0d0d;
+    --db-ink-strong: #131212;
+    --db-ink-strong-contrast: #ffffff;
+    --db-paper: #ffffff;
+    --db-surface: #ffffff;
+    --db-surface-alt: #f6f5f3;
+    --db-body: #333333;
+    --db-muted: #8a8a8a;
+    --db-border: #e6e4e0;
+    --db-accent: #5b6cff;
+    --db-accent-ink: #ffffff;
+    --db-danger: #e5484d;
+    --db-success: #3ecf6a;
+    /* constant dark chrome — sidebar/toast stay near-black in both themes,
+       matching the live site's own fixed sidebar (never restyled for dark
+       mode, see ../../../assets/css/theme-dark.css) */
+    --db-chrome-bg: #131212;
+    --db-chrome-ink: #ffffff;
+    --db-font: 'Segoe UI', Tahoma, Arial, sans-serif;
+    --db-radius-pill: 40px;
+    --db-radius-card: 10px;
+    --db-transition: 0.25s ease;
+}
+
+html.dark-mode {
+    --db-ink: #f2f2f2;
+    --db-ink-strong: #f2f2f2;
+    --db-ink-strong-contrast: #131212;
+    --db-paper: #161616;
+    --db-surface: #1b1b1b;
+    --db-surface-alt: #161616;
+    --db-body: #d8d8d8;
+    --db-muted: #a9a9a9;
+    --db-border: #2c2c2c;
+    --db-accent: #5b6cff;
+    --db-accent-ink: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--db-font);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--db-body);
+    background: var(--db-surface-alt);
+    transition: background var(--db-transition), color var(--db-transition);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+.db-label {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--db-muted);
+}
+
+.db-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 26px;
+    border-radius: var(--db-radius-pill);
+    border: 1px solid var(--db-ink-strong);
+    background: var(--db-ink-strong);
+    color: var(--db-ink-strong-contrast);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    transition: all var(--db-transition);
+}
+
+.db-pill-btn:hover { background: transparent; color: var(--db-ink-strong); }
+
+.db-pill-btn.outline {
+    background: transparent;
+    color: var(--db-ink);
+    border-color: var(--db-border);
+}
+
+.db-pill-btn.outline:hover {
+    border-color: var(--db-accent);
+    color: var(--db-accent);
+}
+
+.db-pill-btn.accent {
+    background: var(--db-accent);
+    border-color: var(--db-accent);
+    color: #fff;
+}
+
+.db-pill-btn.accent:hover { opacity: 0.88; background: var(--db-accent); color: #fff; }
+
+.db-pill-btn.danger {
+    background: transparent;
+    border-color: var(--db-danger);
+    color: var(--db-danger);
+}
+
+.db-pill-btn.danger:hover { background: var(--db-danger); color: #fff; }

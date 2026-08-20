@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Profile & Hero — MaxDev Admin</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/modules/uploader.css">
+</head>
+<body>
+    <div class="db-shell">
+        <div id="shellSidebar"></div>
+        <div class="db-main-wrap">
+            <div id="shellHeader"></div>
+            <main class="db-main">
+                <div class="db-page-header">
+                    <div>
+                        <h1>Profile & Hero</h1>
+                        <p>Your site identity and homepage hero content</p>
+                    </div>
+                    <button type="button" class="db-pill-btn accent" id="saveBtn">Save Changes</button>
+                </div>
+                <div class="db-grid db-grid-2">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Identity</h3>
+                        <p class="db-card-subtitle">Shown in the sidebar on every page of the live site</p>
+                        <div class="db-form-group">
+                            <label>Avatar</label>
+                            <div id="avatarUploader"></div>
+                        </div>
+                        <div class="db-form-group"><label for="pName">Name</label><input id="pName" class="db-input"></div>
+                        <div class="db-form-group"><label for="pRole">Designation</label><input id="pRole" class="db-input"></div>
+                        <div class="db-form-group"><label for="pLocation">Location</label><input id="pLocation" class="db-input"></div>
+                        <div class="db-form-group">
+                            <label class="db-toggle"><input type="checkbox" id="pAvailable"><span class="track"></span> Available for freelance work</label>
+                        </div>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title">Social Links</h3>
+                        <p class="db-card-subtitle">Used in the sidebar, about page and footer</p>
+                        <div class="db-form-group"><label for="sFacebook"><i class="fa fa-facebook"></i> Facebook</label><input id="sFacebook" class="db-input"></div>
+                        <div class="db-form-group"><label for="sTwitter"><i class="fa fa-twitter"></i> Twitter</label><input id="sTwitter" class="db-input"></div>
+                        <div class="db-form-group"><label for="sLinkedin"><i class="fa fa-linkedin"></i> LinkedIn</label><input id="sLinkedin" class="db-input"></div>
+                        <div class="db-form-group"><label for="sInstagram"><i class="fa fa-instagram"></i> Instagram</label><input id="sInstagram" class="db-input"></div>
+                    </div>
+                </div>
+                <div class="db-card" style="margin-top:20px;">
+                    <h3 class="db-card-title">Home Hero</h3>
+                    <p class="db-card-subtitle">The typed headline and intro copy on the homepage</p>
+                    <div class="db-grid db-grid-2">
+                        <div>
+                            <div class="db-form-group"><label for="hLine1">Typed Line 1</label><input id="hLine1" class="db-input"></div>
+                            <div class="db-form-group"><label for="hLine2">Typed Line 2</label><input id="hLine2" class="db-input"></div>
+                            <div class="db-form-group"><label for="hIntro">Intro Paragraph</label><textarea id="hIntro" class="db-textarea"></textarea></div>
+                            <div class="db-form-row">
+                                <div class="db-form-group"><label for="hCta1">Primary CTA Label</label><input id="hCta1" class="db-input"></div>
+                                <div class="db-form-group"><label for="hCta2">Secondary CTA Label</label><input id="hCta2" class="db-input"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="db-label">Live Preview</label>
+                            <div style="border:1px solid var(--db-border);border-radius:var(--db-radius-card);padding:26px;text-align:center;margin-top:8px;background:var(--db-surface-alt);">
+                                <h2 id="previewLine1" style="font-size:18px;font-weight:300;color:var(--db-ink);margin:0 0 6px;"></h2>
+                                <p id="previewLine2" style="font-size:13px;color:var(--db-accent);margin:0 0 14px;"></p>
+                                <p id="previewIntro" style="font-size:12.5px;color:var(--db-muted);margin:0;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/paths.js"></script>
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/seed-data.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/guard.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/fullscreen.js"></script>
+    <script src="../assets/js/uploader.js"></script>
+    <script src="../assets/js/shell.js"></script>
+    <script src="../assets/js/pages/profile.js"></script>
+</body>
+</html>

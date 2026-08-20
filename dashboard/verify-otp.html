@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Verify OTP — MaxDev Dashboard</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="db-auth-body">
+    <div class="db-auth-card">
+        <div class="db-auth-brand">
+            <img src="assets/images/logo.svg" alt="MaxDev">
+            <h1>Verify OTP</h1>
+            <p>Enter the 6-digit code</p>
+        </div>
+        <div class="db-otp-row" id="otpRow">
+            <input type="text" inputmode="numeric" maxlength="1">
+            <input type="text" inputmode="numeric" maxlength="1">
+            <input type="text" inputmode="numeric" maxlength="1">
+            <input type="text" inputmode="numeric" maxlength="1">
+            <input type="text" inputmode="numeric" maxlength="1">
+            <input type="text" inputmode="numeric" maxlength="1">
+        </div>
+        <button type="button" class="db-pill-btn accent" id="verifyBtn">Verify</button>
+        <p class="db-auth-links">Didn't get a code? <a href="#" id="resendLink">Resend<span id="resendCooldown"></span></a></p>
+    </div>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/pages/verify-otp.js"></script>
+</body>
+</html>

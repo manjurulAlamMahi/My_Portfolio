@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(){try{var s=localStorage.getItem('maxdev-theme');var d=s?s==='dark':(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark-mode');}catch(e){}})();</script>
+    <title>Dashboard — MaxDev Admin</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/modules/messages.css">
+    <link rel="stylesheet" href="assets/css/modules/dashboard.css">
+</head>
+<body>
+    <div class="db-shell">
+        <div id="shellSidebar"></div>
+        <div class="db-main-wrap">
+            <div id="shellHeader"></div>
+            <main class="db-main">
+                <div class="db-page-header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Overview of your portfolio content</p>
+                    </div>
+                </div>
+
+                <div class="db-grid db-grid-4" id="statTiles" style="margin-bottom:22px;"></div>
+
+                <div class="db-grid db-grid-3" style="margin-bottom:22px;">
+                    <div class="db-card db-clock-card">
+                        <div class="db-clock-time" id="clockTime">--:--:--</div>
+                        <div class="db-clock-date" id="clockDate">Loading…</div>
+                    </div>
+                    <div class="db-card">
+                        <div class="db-card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                            <span id="calendarMonthLabel">Calendar</span>
+                            <span class="db-calendar-nav">
+                                <button type="button" class="db-icon-btn" id="calPrev" aria-label="Previous month"><i class="fa fa-chevron-left"></i></button>
+                                <button type="button" class="db-icon-btn" id="calNext" aria-label="Next month"><i class="fa fa-chevron-right"></i></button>
+                            </span>
+                        </div>
+                        <div class="db-calendar" id="calendarWidget"></div>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title">Projects</h3>
+                        <p class="db-card-subtitle">Published vs. Draft</p>
+                        <div class="db-split-bar" id="splitBar"></div>
+                        <div class="db-split-legend" id="splitLegend"></div>
+                    </div>
+                </div>
+
+                <div class="db-grid db-grid-3" style="margin-bottom:22px;">
+                    <div class="db-card">
+                        <h3 class="db-card-title">To-Do List</h3>
+                        <div class="db-inline-form">
+                            <input id="todoInput" class="db-input" placeholder="Add a task...">
+                            <button type="button" class="db-pill-btn accent" id="addTodoBtn">Add</button>
+                        </div>
+                        <ul class="db-todo-list" id="todoList"></ul>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title">Quick Note</h3>
+                        <textarea id="quickNote" class="db-textarea db-quick-note" placeholder="Jot something down..."></textarea>
+                        <p class="db-form-hint" id="noteSavedHint">&nbsp;</p>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title">Reminders</h3>
+                        <div class="db-inline-form db-reminder-form">
+                            <input id="reminderText" class="db-input" placeholder="Reminder...">
+                            <input id="reminderDate" type="date" class="db-input">
+                            <button type="button" class="db-pill-btn accent" id="addReminderBtn">Add</button>
+                        </div>
+                        <ul class="db-reminder-list" id="reminderList"></ul>
+                    </div>
+                </div>
+
+                <div class="db-grid db-grid-3">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Recent Activity</h3>
+                        <p class="db-card-subtitle">Latest changes made in this session</p>
+                        <ul id="activityList" style="list-style:none;padding:0;margin:0;"></ul>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                            Messages
+                            <a href="pages/messages.html" style="font-size:11px;color:var(--db-accent);text-transform:uppercase;letter-spacing:0.5px;">View All</a>
+                        </h3>
+                        <p class="db-card-subtitle">Latest contact form submissions</p>
+                        <ul class="db-message-preview-list" id="messagePreviewList"></ul>
+                    </div>
+                    <div class="db-card">
+                        <h3 class="db-card-title">Quick Jump</h3>
+                        <p class="db-card-subtitle">Frequently used sections</p>
+                        <div class="db-grid db-grid-2" id="quickJump"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="assets/js/paths.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/seed-data.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/guard.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/fullscreen.js"></script>
+    <script src="assets/js/shell.js"></script>
+    <script src="assets/js/pages/dashboard-home.js"></script>
+</body>
+</html>
