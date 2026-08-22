@@ -26,12 +26,17 @@
                     </div>
                 </div>
 
+                <div id="eventAlert"></div>
+
                 <div class="db-grid db-grid-4" id="statTiles" style="margin-bottom:22px;"></div>
 
-                <div class="db-grid db-grid-3" style="margin-bottom:22px;">
-                    <div class="db-card db-clock-card">
-                        <div class="db-clock-time" id="clockTime">--:--:--</div>
-                        <div class="db-clock-date" id="clockDate">Loading…</div>
+                <div class="db-grid db-grid-2" style="margin-bottom:22px;">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Projects Overview</h3>
+                        <p class="db-card-subtitle">Published vs. Draft, and by category</p>
+                        <div class="db-split-bar" id="splitBar"></div>
+                        <div class="db-split-legend" id="splitLegend"></div>
+                        <div class="db-category-breakdown" id="categoryBreakdown"></div>
                     </div>
                     <div class="db-card">
                         <div class="db-card-title" style="display:flex;justify-content:space-between;align-items:center;">
@@ -42,12 +47,7 @@
                             </span>
                         </div>
                         <div class="db-calendar" id="calendarWidget"></div>
-                    </div>
-                    <div class="db-card">
-                        <h3 class="db-card-title">Projects</h3>
-                        <p class="db-card-subtitle">Published vs. Draft</p>
-                        <div class="db-split-bar" id="splitBar"></div>
-                        <div class="db-split-legend" id="splitLegend"></div>
+                        <button type="button" class="db-pill-btn outline" id="addEventBtn" style="width:100%;margin-top:14px;"><i class="fa fa-plus"></i> Add Event</button>
                     </div>
                 </div>
 

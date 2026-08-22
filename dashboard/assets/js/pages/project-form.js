@@ -1,5 +1,5 @@
 (function () {
-    Shell.init({ active: 'projects' });
+    Shell.init({ active: 'projects-list' });
 
     var params = new URLSearchParams(window.location.search);
     var editSlug = params.get('slug');

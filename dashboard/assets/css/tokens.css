@@ -107,7 +107,7 @@ button { font-family: inherit; cursor: pointer; }
 .db-pill-btn.accent:hover { opacity: 0.88; background: var(--db-accent); color: #fff; }
 
 .db-pill-btn.danger {
-    background: transparent;
+    background: rgba(229, 72, 77, 0.1);
     border-color: var(--db-danger);
     color: var(--db-danger);
 }

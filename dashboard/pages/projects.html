@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/modules/about.css">
     <link rel="stylesheet" href="../assets/css/modules/projects.css">
 </head>
 <body>
@@ -22,22 +23,39 @@
                     <div><h1>Projects</h1><p>Case studies shown on the live Projects page</p></div>
                     <a href="project-form.html" class="db-pill-btn accent"><i class="fa fa-plus"></i> Add Project</a>
                 </div>
-                <div class="db-table-wrap">
-                    <div class="db-table-toolbar">
-                        <div class="db-search-input"><i class="fa fa-search"></i><input type="text" id="searchInput" placeholder="Search projects..."></div>
-                        <div id="categoryFilters" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+                <div class="db-tabstrip" id="tabStrip"></div>
+
+                <section class="db-tab-panel" data-tab="list">
+                    <div class="db-table-wrap">
+                        <div class="db-table-toolbar">
+                            <div class="db-search-input"><i class="fa fa-search"></i><input type="text" id="searchInput" placeholder="Search projects..."></div>
+                            <div id="categoryFilters" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+                        </div>
+                        <div class="db-row-card-header">
+                            <span></span>
+                            <span>Project</span>
+                            <span>Category</span>
+                            <span>Tech Stack</span>
+                            <span>Status</span>
+                            <span class="col-actions">Actions</span>
+                        </div>
+                        <div id="projectsRows"></div>
+                        <div class="db-empty-state" id="emptyState" style="display:none;">No projects match your search.</div>
                     </div>
-                    <div class="db-row-card-header">
-                        <span></span>
-                        <span>Project</span>
-                        <span>Category</span>
-                        <span>Tech Stack</span>
-                        <span>Status</span>
-                        <span class="col-actions">Actions</span>
+                </section>
+
+                <section class="db-tab-panel" data-tab="categories">
+                    <div class="db-card">
+                        <h3 class="db-card-title">Project Categories</h3>
+                        <p class="db-card-subtitle">Manage the categories available when adding or editing a project</p>
+                        <div class="db-inline-form">
+                            <input id="newCategoryInput" class="db-input" placeholder="New category name">
+                            <button type="button" class="db-pill-btn accent" id="addCategoryBtn">Add</button>
+                        </div>
+                        <div id="categoriesList" style="margin-top:18px;"></div>
+                        <button type="button" class="db-pill-btn accent" id="saveCategories" style="margin-top:10px;">Save Categories</button>
                     </div>
-                    <div id="projectsRows"></div>
-                    <div class="db-empty-state" id="emptyState" style="display:none;">No projects match your search.</div>
-                </div>
+                </section>
             </main>
         </div>
     </div>

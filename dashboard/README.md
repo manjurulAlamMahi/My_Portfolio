@@ -29,10 +29,9 @@ change.
 - Profile & Hero — site identity, social links, homepage hero copy
 - About — bio, stats, services, toolbox, testimonials
 - Resume — technical/soft skills, experience timeline, education
-- Projects — searchable list + full add/edit case-study editor
-- Media Library — all site images in one grid, with replace/delete
-- Contact — contact details and form endpoint
-- Settings — mail configuration, AI Assistant configuration
+- Projects — searchable list + full add/edit case-study editor, plus category management
+- Contact — address, email, WhatsApp and phone number
+- Settings — account (email/password), mail configuration, AI Assistant configuration
 
 ## Structure
 

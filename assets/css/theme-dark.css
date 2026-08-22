@@ -2,7 +2,7 @@
 * ----------------------------------------------------------------------------------------
 * DARK THEME
 * Overrides scoped under html.dark-mode, layered on top of the existing light-theme
-* CSS (style.css / sections.css / sidebar.css). Additive only — nothing here is removed
+* CSS (base.css / sections.css / sidebar.css). Additive only — nothing here is removed
 * when the toggle is off. Toggled by assets/js/theme.js via the floating nav button.
 * ----------------------------------------------------------------------------------------
 */
@@ -26,7 +26,7 @@ html.dark-mode .about-social-row a,
 html.dark-mode .footer-area,
 html.dark-mode .more-portfolio,
 html.dark-mode .single-contact i,
-html.dark-mode .contact-form input[type='submit'],
+html.dark-mode .contact-form button[type='submit'],
 html.dark-mode .form-control {
     background: #161616;
 }
@@ -94,7 +94,7 @@ html.dark-mode .project-filters button,
 html.dark-mode .skills-tab-btn,
 html.dark-mode .about-resume-cta a,
 html.dark-mode .inline-cta a,
-html.dark-mode .contact-form input[type='submit'] {
+html.dark-mode .contact-form button[type='submit'] {
     color: #e0e0e0;
 }
 
@@ -114,7 +114,7 @@ html.dark-mode .timeline-item,
 html.dark-mode .project-filters button,
 html.dark-mode .skills-tab-btn,
 html.dark-mode .soft-skill-card,
-html.dark-mode .contact-form input[type='submit'] {
+html.dark-mode .contact-form button[type='submit'] {
     border-color: #2c2c2c;
 }
 
@@ -241,7 +241,7 @@ html.dark-mode .form-control:focus {
     border-color: #f2f2f2;
 }
 
-html.dark-mode .contact-form input[type='submit']:hover {
+html.dark-mode .contact-form button[type='submit']:hover {
     color: #f2f2f2;
     background: transparent;
 }

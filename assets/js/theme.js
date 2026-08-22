@@ -12,7 +12,7 @@
 (function () {
     "use strict";
 
-    var STORAGE_KEY = "pretty-theme";
+    var STORAGE_KEY = "maxdev-theme";
     var root = document.documentElement;
     var btns = document.querySelectorAll("[data-theme-toggle]");
 

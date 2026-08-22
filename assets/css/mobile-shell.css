@@ -2,7 +2,7 @@
 * ----------------------------------------------------------------------------------------
 * MOBILE APP SHELL (phones, <768px)
 * Bottom tab bar + floating theme toggle, replacing the fixed top header/hamburger menu
-* on phone-width screens. Tablet (768-991px) keeps the existing top nav (see responsive.css
+* on phone-width screens. Tablet (768-991px) keeps the existing top nav (see base.css
 * for its touch-target touch-up). Desktop (>=992px) is untouched — see sidebar.css /
 * floating-nav.css for that shell.
 * ----------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@
        MOBILE CONTENT AUDIT: section rhythm, typography, touch targets,
        card reflow, and the contact form — across index/about/resume/
        projects/project-details/contact. Lives in this file (not
-       responsive.css) because this stylesheet loads last, after
+       base.css) because this stylesheet loads last, after
        sections.css/sidebar.css/floating-nav.css — those define several of
        these same selectors, and equal-specificity rules in a stylesheet
        loaded earlier in <head> lose the cascade.
@@ -203,7 +203,7 @@
         justify-content: center;
     }
 
-    .contact-form input[type='submit'] {
+    .contact-form button[type='submit'] {
         display: -webkit-flex;
         display: flex;
         width: 100%;
@@ -284,8 +284,8 @@
 
 /* ---------------------------------------------------------------------
    TABLET TOUCH-UP (768-991px): 44px minimum tap targets on the existing
-   top nav. No structural changes — see responsive.css for the tablet
-   layout rules this supplements. Placed here (not responsive.css) for
+   top nav. No structural changes — see base.css for the tablet
+   layout rules this supplements. Placed here (not base.css) for
    the same cascade-order reason as the mobile audit block above.
    --------------------------------------------------------------------- */
 @media only screen and (min-width: 767px) and (max-width: 991px) {
@@ -304,7 +304,7 @@
     .project-filters button,
     .skills-tab-btn,
     .home-btn,
-    .contact-form input[type='submit'] {
+    .contact-form button[type='submit'] {
         min-height: 44px;
     }
 

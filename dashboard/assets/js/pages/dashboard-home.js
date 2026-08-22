@@ -7,26 +7,46 @@
     var contact = Store.get('contact') || {};
     var messages = Store.get('messages') || [];
 
+    // ---- Today's Event Alert (static sample data, not Store-backed) ----
+    function fmtDate(d) {
+        return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    }
+    var todayDate = new Date();
+    var sampleEvents = [
+        { date: fmtDate(todayDate), title: 'Team Meeting', time: '3:00 PM' },
+        { date: fmtDate(new Date(todayDate.getFullYear(), todayDate.getMonth(), 24)), title: 'Client Call', time: '11:00 AM' }
+    ];
+    var todaysEvent = sampleEvents.find(function (e) { return e.date === fmtDate(todayDate); });
+    if (todaysEvent) {
+        document.getElementById('eventAlert').innerHTML =
+            '<div class="db-event-alert">' +
+                '<span class="icon"><i class="fa fa-bell"></i></span>' +
+                '<div>' +
+                    '<div class="label">Today\'s Event</div>' +
+                    '<div class="message">You have an event today: <strong>' + todaysEvent.title + '</strong> at ' + todaysEvent.time + '.</div>' +
+                '</div>' +
+            '</div>';
+    }
+
     // ---- Stat tiles ----
     var unreadCount = messages.filter(function (m) { return !m.read; }).length;
     var stats = [
         { icon: 'fa-folder-open-o', value: projects.length, label: 'Projects' },
         { icon: 'fa-bar-chart', value: skillCount, label: 'Tracked Skills' },
-        { icon: 'fa-envelope-o', value: unreadCount, label: 'Unread Messages' },
-        { icon: 'fa-clock-o', value: 'Today', label: 'Last Updated' }
+        { icon: 'fa-envelope-o', value: unreadCount, label: 'Unread Messages' }
     ];
     document.getElementById('statTiles').innerHTML = stats.map(function (s) {
         return '<div class="db-stat-tile"><span class="icon"><i class="fa ' + s.icon + '"></i></span><div><div class="value">' + s.value + '</div><div class="label">' + s.label + '</div></div></div>';
-    }).join('');
+    }).join('') +
+        '<div class="db-stat-tile"><span class="icon"><i class="fa fa-clock-o"></i></span><div><div class="value" id="statClockValue" style="font-variant-numeric:tabular-nums;">--:--:--</div><div class="label">Live Clock</div></div></div>';
 
-    // ---- Clock ----
-    function tickClock() {
+    // ---- Live clock (4th stat tile) ----
+    function tickStatClock() {
         var now = new Date();
-        document.getElementById('clockTime').textContent = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        document.getElementById('clockDate').textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        document.getElementById('statClockValue').textContent = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     }
-    tickClock();
-    setInterval(tickClock, 1000);
+    tickStatClock();
+    setInterval(tickStatClock, 1000);
 
     // ---- Calendar ----
     var today = new Date();
@@ -44,7 +64,14 @@
         for (var e = 0; e < firstDay; e++) cells.push('<div class="day empty"></div>');
         for (var day = 1; day <= daysInMonth; day++) {
             var isToday = isCurrentMonth && day === today.getDate();
-            cells.push('<div class="day' + (isToday ? ' today' : '') + '">' + day + '</div>');
+            var cellDateStr = fmtDate(new Date(calView.year, calView.month, day));
+            var dayEvent = sampleEvents.find(function (ev) { return ev.date === cellDateStr; });
+            cells.push(
+                '<div class="day' + (isToday ? ' today' : '') + (dayEvent ? ' has-event' : '') + '">' +
+                    day +
+                    (dayEvent ? '<span class="event-dot"></span><span class="event-tooltip">' + dayEvent.title + ' — ' + dayEvent.time + '</span>' : '') +
+                '</div>'
+            );
         }
         document.getElementById('calendarWidget').innerHTML = '<div class="db-calendar-grid">' + cells.join('') + '</div>';
     }
@@ -70,6 +97,21 @@
     document.getElementById('splitLegend').innerHTML =
         '<span><span class="dot published"></span> Published (' + published + ')</span>' +
         '<span><span class="dot draft"></span> Draft (' + draft + ')</span>';
+
+    // ---- Projects by category ----
+    var categoryCounts = {};
+    projects.forEach(function (p) {
+        categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+    });
+    var categories = Object.keys(categoryCounts);
+    var maxCategoryCount = Math.max.apply(null, categories.map(function (c) { return categoryCounts[c]; }).concat([1]));
+    document.getElementById('categoryBreakdown').innerHTML = categories.map(function (c) {
+        var pct = categoryCounts[c] / maxCategoryCount * 100;
+        return '<div class="db-category-row">' +
+            '<div class="db-category-label"><span>' + c + '</span><span class="count">' + categoryCounts[c] + '</span></div>' +
+            '<div class="db-category-track"><span class="db-category-fill" style="width:' + pct + '%"></span></div>' +
+        '</div>';
+    }).join('');
 
     // ---- To-Do list ----
     var todos = Store.get('todos') || [];
@@ -193,7 +235,6 @@
     var jumps = [
         { label: 'Add Project', href: 'pages/projects.html', icon: 'fa-plus' },
         { label: 'Messages', href: 'pages/messages.html', icon: 'fa-envelope-o' },
-        { label: 'Media Library', href: 'pages/media.html', icon: 'fa-picture-o' },
         { label: 'Settings', href: 'pages/settings.html', icon: 'fa-cog' }
     ];
     document.getElementById('quickJump').innerHTML = jumps.map(function (j) {

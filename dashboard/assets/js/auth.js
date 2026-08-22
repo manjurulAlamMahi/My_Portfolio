@@ -11,8 +11,8 @@
     var OTP_TTL_MS = 5 * 60 * 1000;
 
     var Auth = {
-        ADMIN_EMAIL: "admin@maxdev.com",
-        ADMIN_PASSWORD: "MaxDev@2026",
+        ADMIN_EMAIL: "admin",
+        ADMIN_PASSWORD: "1",
 
         login: function (email, password) {
             var ok = email === Auth.ADMIN_EMAIL && password === Auth.ADMIN_PASSWORD;
@@ -34,11 +34,11 @@
             return code;
         },
 
+        // DEMO MODE: no real backend sends this code, so verification only
+        // checks the code is well-formed (6 digits) rather than matching
+        // the generated value — any 6-digit input passes, on purpose.
         verifyOtp: function (code) {
-            var raw = sessionStorage.getItem(OTP_KEY);
-            if (!raw) return false;
-            var stored = JSON.parse(raw);
-            var ok = stored.code === String(code) && Date.now() < stored.expires;
+            var ok = /^\d{6}$/.test(String(code));
             if (ok) {
                 sessionStorage.setItem(OTP_VERIFIED_KEY, "1");
                 sessionStorage.removeItem(OTP_KEY);

@@ -14,14 +14,17 @@
             { id: 'resume-experience', label: 'Experience', href: 'pages/resume-experience.html' },
             { id: 'resume-education', label: 'Education', href: 'pages/resume-education.html' }
         ]},
-        { id: 'projects', label: 'Projects', icon: 'fa-folder-open-o', href: 'pages/projects.html' },
-        { id: 'media', label: 'Media Library', icon: 'fa-picture-o', href: 'pages/media.html' },
+        { id: 'projects', label: 'Projects', icon: 'fa-folder-open-o', children: [
+            { id: 'projects-list', label: 'All Projects', href: 'pages/projects.html?tab=list' },
+            { id: 'projects-categories', label: 'Categories', href: 'pages/projects.html?tab=categories' }
+        ]},
         { id: 'messages', label: 'Messages', icon: 'fa-envelope-o', href: 'pages/messages.html', badge: 'messages' },
         { id: 'contact', label: 'Contact', icon: 'fa-map-marker', href: 'pages/contact.html' }
     ];
 
     var NAV_BOTTOM = [
         { id: 'settings', label: 'Settings', icon: 'fa-cog', children: [
+            { id: 'settings-account', label: 'Account', href: 'pages/settings.html?tab=account' },
             { id: 'settings-mail', label: 'Mail Configuration', href: 'pages/settings.html?tab=mail' },
             { id: 'settings-ai', label: 'AI Assistant Configuration', href: 'pages/settings.html?tab=ai' }
         ]}
@@ -111,15 +114,22 @@
         var backdrop = document.getElementById('dbSidebarBackdrop');
         var COLLAPSE_KEY = 'maxdev-dashboard-sidebar-collapsed';
 
-        if (localStorage.getItem(COLLAPSE_KEY) === '1') {
+        function updateCollapseIcon(collapsed) {
+            collapseBtn.querySelector('i').className = 'fa fa-angle-double-' + (collapsed ? 'right' : 'left');
+        }
+
+        var startCollapsed = localStorage.getItem(COLLAPSE_KEY) === '1';
+        if (startCollapsed) {
             sidebar.classList.add('collapsed');
             if (mainWrap) mainWrap.classList.add('sidebar-collapsed');
         }
+        updateCollapseIcon(startCollapsed);
 
         collapseBtn.addEventListener('click', function () {
             var collapsed = sidebar.classList.toggle('collapsed');
             if (mainWrap) mainWrap.classList.toggle('sidebar-collapsed', collapsed);
             localStorage.setItem(COLLAPSE_KEY, collapsed ? '1' : '0');
+            updateCollapseIcon(collapsed);
         });
 
         drawerToggle.addEventListener('click', function () {

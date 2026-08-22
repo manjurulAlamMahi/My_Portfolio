@@ -68,6 +68,7 @@
             return '<div class="db-softskill-card">' +
                 '<button type="button" class="db-pill-btn danger remove-btn db-remove-x" data-remove="' + i + '" aria-label="Remove soft skill"><i class="fa fa-times"></i></button>' +
                 '<i class="fa ' + s.icon + ' icon"></i>' +
+                '<input class="db-input" style="margin-bottom:6px;font-size:11px;text-align:center;" data-soft="' + i + '" data-field="icon" value="' + s.icon + '" placeholder="fa-star-o">' +
                 '<input class="db-input" style="margin-bottom:6px;" data-soft="' + i + '" data-field="name" value="' + s.name + '">' +
                 '<textarea class="db-textarea" style="min-height:60px;" data-soft="' + i + '" data-field="note">' + s.note + '</textarea>' +
             '</div>';

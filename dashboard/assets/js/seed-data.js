@@ -11,12 +11,12 @@ window.SEED = {
         designation: "Full Stack Developer",
         location: "Remote",
         available: true,
-        social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-            instagram: "#"
-        }
+        social: [
+            { icon: "fa-facebook", title: "Facebook", link: "#" },
+            { icon: "fa-twitter", title: "Twitter", link: "#" },
+            { icon: "fa-linkedin", title: "LinkedIn", link: "#" },
+            { icon: "fa-instagram", title: "Instagram", link: "#" }
+        ]
     },
     hero: {
         typedLine1: "Hi, I'm Alex Morgan",
@@ -39,22 +39,22 @@ window.SEED = {
         { label: "Awards & Recognitions", value: 15, suffix: "+" }
     ],
     services: [
-        { icon: "fa-code", title: "Frontend Development", description: "Responsive, accessible interfaces built with React and modern JavaScript." },
-        { icon: "fa-server", title: "Backend Development", description: "APIs, databases and server-side logic designed to scale with real traffic." },
-        { icon: "fa-cloud", title: "DevOps & Deployment", description: "CI/CD pipelines and cloud infrastructure that ship without the drama." }
+        { image: "assets/images/tool-placeholder.svg", title: "Frontend Development", description: "Responsive, accessible interfaces built with React and modern JavaScript." },
+        { image: "assets/images/tool-placeholder.svg", title: "Backend Development", description: "APIs, databases and server-side logic designed to scale with real traffic." },
+        { image: "assets/images/tool-placeholder.svg", title: "DevOps & Deployment", description: "CI/CD pipelines and cloud infrastructure that ship without the drama." }
     ],
     toolbox: [
-        { icon: "ri-reactjs-line", label: "React" },
-        { icon: "ri-nodejs-line", label: "Node.js" },
-        { icon: "ri-javascript-line", label: "JavaScript" },
-        { icon: "ri-html5-line", label: "HTML5" },
-        { icon: "ri-css3-line", label: "CSS3" },
-        { icon: "ri-git-branch-line", label: "Git" }
+        { image: "assets/images/tool-placeholder.svg", label: "React" },
+        { image: "assets/images/tool-placeholder.svg", label: "Node.js" },
+        { image: "assets/images/tool-placeholder.svg", label: "JavaScript" },
+        { image: "assets/images/tool-placeholder.svg", label: "HTML5" },
+        { image: "assets/images/tool-placeholder.svg", label: "CSS3" },
+        { image: "assets/images/tool-placeholder.svg", label: "Git" }
     ],
     testimonials: [
-        { name: "Sarah K.", role: "Small Business Owner", stars: 5, quote: "Communication was clear from day one and the final build matched the brief almost exactly — no scope surprises, no chasing updates." },
-        { name: "James T.", role: "Startup Founder", stars: 5, quote: "Took a messy MVP and turned it into something we could actually launch on schedule. Would bring them onto the next project without a second thought." },
-        { name: "Priya M.", role: "Marketing Lead", stars: 5, quote: "Genuinely good at translating vague product ideas into a working plan, then just quietly executing on it. Exactly what a small team needs." }
+        { name: "Sarah K.", role: "Small Business Owner", stars: 5, source: "Google Reviews", quote: "Communication was clear from day one and the final build matched the brief almost exactly — no scope surprises, no chasing updates." },
+        { name: "James T.", role: "Startup Founder", stars: 5, source: "Upwork", quote: "Took a messy MVP and turned it into something we could actually launch on schedule. Would bring them onto the next project without a second thought." },
+        { name: "Priya M.", role: "Marketing Lead", stars: 5, source: "Direct Email", quote: "Genuinely good at translating vague product ideas into a working plan, then just quietly executing on it. Exactly what a small team needs." }
     ],
     skills: [
         { category: "Frontend", items: [
@@ -131,18 +131,11 @@ window.SEED = {
             links: { github: "", live: "#", figma: "#" }
         }
     ],
-    media: [
-        { id: "media-1", url: "assets/images/avatar-placeholder.svg", label: "Profile Avatar", tag: "avatar" },
-        { id: "media-2", url: "assets/images/logo.svg", label: "Site Logo", tag: "logo" },
-        { id: "media-3", url: "assets/images/work/1.svg", label: "Nimbus Analytics Thumbnail", tag: "work" },
-        { id: "media-4", url: "assets/images/work/2.svg", label: "Solstice Studio Thumbnail", tag: "work" },
-        { id: "media-5", url: "assets/images/work/3.svg", label: "Aperture Thumbnail", tag: "work" }
-    ],
     contact: {
         location: "Remote — available worldwide",
         email: "hello@yourdomain.com",
-        skype: "your.skype.id",
-        formEndpoint: "https://formspree.io/f/your-form-id"
+        whatsapp: "",
+        phone: ""
     },
     messages: [
         { id: "msg-1", name: "Jordan Lee", email: "jordan.lee@example.com", subject: "Freelance project inquiry", message: "Hi Alex, I saw your portfolio and I'm impressed with the Nimbus Analytics case study. We're a small startup looking for a full stack developer for a 3-month contract. Would you be available to hop on a call this week?", date: "2026-08-18T10:22:00", read: false },
@@ -161,6 +154,10 @@ window.SEED = {
         { id: "rem-1", text: "Renew domain registration", date: "2026-09-01" },
         { id: "rem-2", text: "Send monthly invoice", date: "2026-08-31" }
     ],
+    account: {
+        email: "admin@maxdev.com",
+        password: "MaxDev@2026"
+    },
     settingsMail: {
         smtpHost: "", smtpPort: 587, smtpUser: "", smtpPassword: "", fromAddress: "", fromName: "MaxDev Portfolio"
     },

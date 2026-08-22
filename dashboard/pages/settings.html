@@ -21,9 +21,58 @@
             <div id="shellHeader"></div>
             <main class="db-main">
                 <div class="db-page-header">
-                    <div><h1>Settings</h1><p>Mail delivery and AI Assistant configuration</p></div>
+                    <div><h1>Settings</h1><p>Account security, mail delivery and AI Assistant configuration</p></div>
                 </div>
                 <div class="db-tabstrip" id="tabStrip"></div>
+
+                <section class="db-tab-panel" data-tab="account">
+                    <div class="db-grid db-grid-2">
+                        <div class="db-card">
+                            <h3 class="db-card-title">Change Email</h3>
+                            <p class="db-card-subtitle">Verifying both your current and new email keeps the account recoverable</p>
+                            <div class="db-settings-note"><i class="fa fa-info-circle"></i>This account record is separate from the demo login credentials on the sign-in page — changes here are stored but don't affect what you log in with.</div>
+                            <div class="db-form-group"><label>Current Email</label><input class="db-input" id="acCurrentEmail" disabled></div>
+                            <div id="acEmailStep1">
+                                <div class="db-form-group"><label for="acNewEmail">New Email</label><input type="email" id="acNewEmail" class="db-input"></div>
+                                <button type="button" class="db-pill-btn accent" id="acSendCode">Send Code</button>
+                            </div>
+                            <div id="acEmailStep2" style="display:none;">
+                                <div class="db-form-group"><label>Enter the code sent to your current email</label>
+                                    <div class="db-otp-row" id="acOtpCurrent">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                    </div>
+                                </div>
+                                <button type="button" class="db-pill-btn accent" id="acVerifyCurrent">Verify</button>
+                            </div>
+                            <div id="acEmailStep3" style="display:none;">
+                                <div class="db-form-group"><label>Enter the code sent to your new email</label>
+                                    <div class="db-otp-row" id="acOtpNew">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                        <input type="text" inputmode="numeric" maxlength="1">
+                                    </div>
+                                </div>
+                                <button type="button" class="db-pill-btn accent" id="acVerifyNew">Verify & Update Email</button>
+                            </div>
+                        </div>
+                        <div class="db-card">
+                            <h3 class="db-card-title">Change Password</h3>
+                            <p class="db-card-subtitle">Choose a new password for the dashboard admin account</p>
+                            <div class="db-form-group"><label for="acOldPassword">Old Password</label><input type="password" id="acOldPassword" class="db-input"></div>
+                            <div class="db-form-group"><label for="acNewPassword">New Password</label><input type="password" id="acNewPassword" class="db-input" placeholder="At least 6 characters"></div>
+                            <div class="db-form-group"><label for="acConfirmPassword">Confirm New Password</label><input type="password" id="acConfirmPassword" class="db-input"></div>
+                            <button type="button" class="db-pill-btn accent" id="acSavePassword">Update Password</button>
+                        </div>
+                    </div>
+                </section>
 
                 <section class="db-tab-panel" data-tab="mail">
                     <div class="db-card">

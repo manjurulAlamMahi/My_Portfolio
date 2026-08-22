@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/modules/uploader.css">
+    <link rel="stylesheet" href="../assets/css/modules/about.css">
 </head>
 <body>
     <div class="db-shell">
@@ -36,17 +37,16 @@
                         <div class="db-form-group"><label for="pName">Name</label><input id="pName" class="db-input"></div>
                         <div class="db-form-group"><label for="pRole">Designation</label><input id="pRole" class="db-input"></div>
                         <div class="db-form-group"><label for="pLocation">Location</label><input id="pLocation" class="db-input"></div>
-                        <div class="db-form-group">
-                            <label class="db-toggle"><input type="checkbox" id="pAvailable"><span class="track"></span> Available for freelance work</label>
+                        <div class="db-toggle-row">
+                            <span>Available for freelance work</span>
+                            <label class="db-toggle"><input type="checkbox" id="pAvailable"><span class="track"></span></label>
                         </div>
                     </div>
                     <div class="db-card">
                         <h3 class="db-card-title">Social Links</h3>
                         <p class="db-card-subtitle">Used in the sidebar, about page and footer</p>
-                        <div class="db-form-group"><label for="sFacebook"><i class="fa fa-facebook"></i> Facebook</label><input id="sFacebook" class="db-input"></div>
-                        <div class="db-form-group"><label for="sTwitter"><i class="fa fa-twitter"></i> Twitter</label><input id="sTwitter" class="db-input"></div>
-                        <div class="db-form-group"><label for="sLinkedin"><i class="fa fa-linkedin"></i> LinkedIn</label><input id="sLinkedin" class="db-input"></div>
-                        <div class="db-form-group"><label for="sInstagram"><i class="fa fa-instagram"></i> Instagram</label><input id="sInstagram" class="db-input"></div>
+                        <div id="socialLinksList"></div>
+                        <button type="button" class="db-pill-btn outline" id="addSocialLink"><i class="fa fa-plus"></i> Add Social Link</button>
                     </div>
                 </div>
                 <div class="db-card" style="margin-top:20px;">

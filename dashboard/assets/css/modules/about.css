@@ -16,3 +16,9 @@
 .db-toolbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; margin-top: 6px; }
 .db-toolbox-item { border: 1px solid var(--db-border); border-radius: var(--db-radius-card); padding: 16px 12px 14px; text-align: center; position: relative; overflow: visible; }
 .db-toolbox-item .remove-btn { position: absolute; top: -9px; right: -9px; z-index: 2; }
+.db-toolbox-item .db-toolbox-image { display: block; width: 48px; height: 48px; margin: 0 auto; border-radius: 8px; overflow: hidden; cursor: pointer; border: 1px solid var(--db-border); background: var(--db-surface-alt); }
+.db-toolbox-item .db-toolbox-image img { width: 100%; height: 100%; object-fit: contain; }
+.db-toolbox-item .db-toolbox-image input[type="file"] { display: none; }
+.db-service-image { display: block; width: 56px; height: 56px; border-radius: 10px; overflow: hidden; cursor: pointer; border: 1px solid var(--db-border); background: var(--db-surface-alt); }
+.db-service-image img { width: 100%; height: 100%; object-fit: contain; }
+.db-service-image input[type="file"] { display: none; }

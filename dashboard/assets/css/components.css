@@ -72,6 +72,17 @@
 .db-toggle input:checked + .track { background: var(--db-accent); }
 .db-toggle input:checked + .track::after { transform: translateX(18px); }
 
+.db-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--db-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 4px;
+}
+.db-toggle-row span { font-size: 13px; color: var(--db-ink); }
+
 /* Badges / tags */
 .db-badge {
     display: inline-flex; align-items: center; gap: 5px;
@@ -115,7 +126,7 @@
 .db-filter-chip { padding: 8px 16px; border-radius: var(--db-radius-pill); border: 1px solid var(--db-border); background: var(--db-surface); font-size: 12px; color: var(--db-muted); }
 .db-filter-chip.active { background: var(--db-ink-strong); color: var(--db-ink-strong-contrast); border-color: var(--db-ink-strong); }
 
-.db-table-wrap { --db-row-cols: 68px 2.4fr 1.1fr 1.6fr 120px 96px; }
+.db-table-wrap { --db-row-cols: 68px 2.2fr 1fr 1.4fr 110px 150px; }
 
 .db-row-card-header {
     display: grid;
@@ -143,7 +154,8 @@
 .db-row-card .title { font-size: 14px; font-weight: 500; color: var(--db-ink); margin: 0 0 5px; }
 .db-row-card .desc { font-size: 12.5px; color: var(--db-muted); margin: 0; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .db-row-card .db-tech-badges { row-gap: 6px; }
-.db-row-card .actions { display: flex; gap: 10px; justify-content: flex-end; }
+.db-row-card .actions { display: flex; gap: 10px; justify-content: flex-end; align-items: center; }
+.db-row-card .actions > * { flex-shrink: 0; }
 
 @media (max-width: 767px) {
     .db-row-card-header { display: none; }
@@ -180,8 +192,14 @@
 }
 .db-toast.success { background: #1f7a3d; }
 .db-toast.error { background: #a8262c; }
+.db-toast.info { background: var(--db-accent); }
 @keyframes dbToastIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 767px) {
     .db-row-card { grid-template-columns: 48px 1fr; }
 }
+
+.db-inline-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.db-inline-form input { flex: 1; }
+.db-inline-form.db-reminder-form { flex-wrap: wrap; }
+.db-inline-form.db-reminder-form input[type="date"] { flex: 0 0 140px; }
